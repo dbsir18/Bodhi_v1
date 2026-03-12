@@ -7,7 +7,6 @@ export const gitaVerses = [
     verse: 47,
     sanskrit: "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन",
     translation: "You have the right to perform your duty, but never to the fruits of your action.",
-    image: "/images/gita/verse-01.png"
   },
   {
     id: 2,
@@ -15,7 +14,73 @@ export const gitaVerses = [
     verse: 21,
     sanskrit: "यद्यदाचरति श्रेष्ठस्तत्तदेवेतरो जनः",
     translation: "Whatever a great person does, common people follow. Whatever standards they set, the world pursues.",
-    image: "/images/gita/verse-08.png"
+  }
+];
+
+export const galleryPaintings = [
+  {
+    id: 1,
+    title: "Ghat in Benares",
+    artist: "Hiroshi Yoshida",
+    year: 1931,
+    image: "/images/gallery/01-ghat-benares.jpg",
+    wikiUrl: "https://en.wikipedia.org/wiki/Hiroshi_Yoshida"
+  },
+  {
+    id: 2,
+    title: "Golden Temple in Amritsar",
+    artist: "Hiroshi Yoshida",
+    year: 1931,
+    image: "/images/gallery/02-golden-temple.jpg",
+    wikiUrl: "https://en.wikipedia.org/wiki/Hiroshi_Yoshida"
+  },
+  {
+    id: 3,
+    title: "Morning Mist in Taj Mahal",
+    artist: "Hiroshi Yoshida",
+    year: 1931,
+    image: "/images/gallery/03-taj-mahal.jpg",
+    wikiUrl: "https://en.wikipedia.org/wiki/Hiroshi_Yoshida"
+  },
+  {
+    id: 4,
+    title: "Udaipur Palace",
+    artist: "Hiroshi Yoshida",
+    year: 1931,
+    image: "/images/gallery/04-udaipur-palace.jpg",
+    wikiUrl: "https://en.wikipedia.org/wiki/Hiroshi_Yoshida"
+  },
+  {
+    id: 5,
+    title: "Kangchenjunga from Darjeeling",
+    artist: "Edward Lear",
+    year: 1877,
+    image: "/images/gallery/05-kangchenjunga.jpg",
+    wikiUrl: "https://en.wikipedia.org/wiki/Edward_Lear"
+  },
+  {
+    id: 6,
+    title: "Jagannath Temple, Puri",
+    artist: "Unknown",
+    year: 1895,
+    image: "/images/gallery/06-jagannath-puri.jpg",
+    wikiUrl: "https://en.wikipedia.org/wiki/Jagannath_Temple,_Puri"
+  },
+  {
+    id: 7,
+    title: "Bull Nandi, Kashi Vishwanath Temple",
+    artist: "William Simpson",
+    year: 1866,
+    image: "/images/gallery/07-nandi-varanasi.jpg",
+    wikiUrl: "https://en.wikipedia.org/wiki/William_Simpson_(artist)"
+  },
+  {
+    id: 8,
+    title: "Shakuntala",
+    artist: "Raja Ravi Varma",
+    year: 1870,
+    image: "/images/gallery/08-shakuntala.jpg",
+    wikiUrl: "https://en.wikipedia.org/wiki/Raja_Ravi_Varma"
   }
 ];
 
