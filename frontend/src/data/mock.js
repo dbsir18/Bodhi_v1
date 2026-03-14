@@ -88,7 +88,15 @@ export const thoughts = [];
 
 export const learnings = [];
 
-export const projects = [];
+export const projects = [
+  {
+    id: 1,
+    title: "Bodhi",
+    description: "Personal digital workspace inspired by macOS — rotating Bhagavad Gita art, dock-based navigation, gym heatmap, thoughts, learnings, and more.",
+    url: "https://bodhi-v1.vercel.app",
+    tags: ["React", "Tailwind", "FastAPI"],
+  },
+];
 
 export const events = [];
 

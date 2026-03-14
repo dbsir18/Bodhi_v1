@@ -14,7 +14,60 @@ const categories = [
 ];
 
 const MONTHS = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
-const DAYS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+// Mon=0 … Sun=6 (ISO weekday - 1)
+const DAY_LABELS = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
+
+// Returns ISO weekday index 0=Mon … 6=Sun for a given Date
+const isoWeekday = (d) => (d.getDay() + 6) % 7;
+
+// Build an array of month-blocks from July 2025 → today.
+// Each block = { label, weeks } where weeks is an array of 7-element columns
+// (null = empty padding cell, otherwise a day object).
+const buildMonthBlocks = (sessionSet, today) => {
+  const todayStr = today.toISOString().split('T')[0];
+  const blocks = [];
+
+  let year = 2025;
+  let month = 6; // 0-indexed: 6 = July
+
+  while (year < today.getFullYear() || (year === today.getFullYear() && month <= today.getMonth())) {
+    const firstDay = new Date(year, month, 1);
+    const daysInMonth = new Date(year, month + 1, 0).getDate();
+    const startOffset = isoWeekday(firstDay); // blank cells before day 1
+
+    // Build flat list of cells: nulls for padding, then real days
+    const cells = [];
+    for (let i = 0; i < startOffset; i++) cells.push(null);
+    for (let d = 1; d <= daysInMonth; d++) {
+      const date = new Date(year, month, d);
+      if (date > today) break;
+      const dateStr = `${year}-${String(month + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
+      cells.push({
+        date: dateStr,
+        active: sessionSet.has(dateStr),
+        isToday: dateStr === todayStr,
+      });
+    }
+
+    // Chunk into columns of 7 (Mon→Sun)
+    const weeks = [];
+    for (let col = 0; col < cells.length; col += 7) {
+      weeks.push(cells.slice(col, col + 7));
+    }
+    // Pad last column to 7 rows so the grid is rectangular
+    if (weeks.length > 0) {
+      const last = weeks[weeks.length - 1];
+      while (last.length < 7) last.push(null);
+    }
+
+    blocks.push({ label: MONTHS[month], weeks });
+
+    month++;
+    if (month > 11) { month = 0; year++; }
+  }
+
+  return blocks;
+};
 
 const GymCalendar = () => {
   const [hoveredDay, setHoveredDay] = useState(null);
@@ -23,42 +76,14 @@ const GymCalendar = () => {
   const emptyColor = isDark ? '#161b22' : '#ebedf0';
   const activeColor = isDark ? '#39d353' : '#26a641';
 
-  const { weeks, monthLabels } = useMemo(() => {
+  const blocks = useMemo(() => {
     const sessionSet = new Set(gymSessions.map(s => s.date));
     const today = new Date();
-    // July 1 2025 is a Tuesday — align to Monday June 30 so the grid is clean,
-    // but hide any day before July 1
-    const startDate = new Date('2025-06-30');
-
-    const weeks = [];
-    const monthLabels = [];
-    let currentDate = new Date(startDate);
-
-    while (currentDate <= today) {
-      const week = [];
-      for (let d = 0; d < 7; d++) {
-        const dateStr = currentDate.toISOString().split('T')[0];
-        const beforeStart = currentDate < new Date('2025-07-01');
-        const hasSession = sessionSet.has(dateStr);
-
-        if (d === 0 && (weeks.length === 0 || currentDate.getDate() <= 7)) {
-          monthLabels.push({ weekIndex: weeks.length, month: MONTHS[currentDate.getMonth()] });
-        }
-
-        week.push({
-          date: dateStr,
-          active: hasSession,
-          isToday: dateStr === today.toISOString().split('T')[0],
-          isFuture: currentDate > today,
-          isBeforeStart: beforeStart,
-        });
-        currentDate.setDate(currentDate.getDate() + 1);
-      }
-      weeks.push(week);
-    }
-
-    return { weeks, monthLabels };
+    return buildMonthBlocks(sessionSet, today);
   }, []);
+
+  const CELL = 11;
+  const GAP = 3;
 
   return (
     <div className="p-5 rounded-2xl bg-white dark:bg-gray-800/80 border border-gray-100 dark:border-gray-700/50">
@@ -66,59 +91,70 @@ const GymCalendar = () => {
 
       <div className="overflow-x-auto">
         <div className="inline-flex flex-col" style={{ minWidth: 'max-content' }}>
-          {/* Month labels */}
-          <div className="flex ml-8 mb-1">
-            {monthLabels.map((label, i) => (
-              <span
-                key={i}
-                className="text-[10px] text-gray-400 dark:text-gray-500"
-                style={{ position: 'relative', left: `${label.weekIndex * 15}px` }}
-              >
-                {label.month}
-              </span>
-            ))}
-          </div>
-
-          <div className="flex">
-            {/* Day labels */}
-            <div className="flex flex-col gap-[3px] mr-2">
-              {DAYS.map((day, i) => (
-                <div key={i} className="h-[11px] flex items-center">
+          {/* Month labels + grids side by side */}
+          <div className="flex items-start gap-4">
+            {/* Day-of-week labels pinned on the left */}
+            <div className="flex flex-col gap-[3px] mt-[18px] shrink-0">
+              {DAY_LABELS.map((day) => (
+                <div key={day} style={{ height: CELL }} className="flex items-center">
                   <span className="text-[10px] text-gray-400 dark:text-gray-500 w-6 text-right">{day}</span>
                 </div>
               ))}
             </div>
 
-            {/* Cells */}
-            <div className="flex gap-[3px]">
-              {weeks.map((week, wi) => (
-                <div key={wi} className="flex flex-col gap-[3px]">
-                  {week.map((day) => {
-                    const hidden = day.isFuture || day.isBeforeStart;
-                    return (
-                      <div
-                        key={day.date}
-                        className={`w-[11px] h-[11px] rounded-[2px] ${
-                          hidden ? 'opacity-0' : ''
-                        }`}
-                        style={{ backgroundColor: hidden ? 'transparent' : (day.active ? activeColor : emptyColor) }}
-                        onMouseEnter={() => !hidden && setHoveredDay(day)}
-                        onMouseLeave={() => setHoveredDay(null)}
-                      />
-                    );
-                  })}
+            {/* One block per month */}
+            {blocks.map((block) => (
+              <div key={block.label} className="flex flex-col">
+                {/* Month label */}
+                <span className="text-[10px] text-gray-400 dark:text-gray-500 mb-1 h-[14px] leading-[14px]">
+                  {block.label}
+                </span>
+
+                {/* Columns */}
+                <div className="flex" style={{ gap: GAP }}>
+                  {block.weeks.map((col, wi) => (
+                    <div key={wi} className="flex flex-col" style={{ gap: GAP }}>
+                      {col.map((day, di) => {
+                        if (!day) {
+                          return (
+                            <div
+                              key={`pad-${wi}-${di}`}
+                              style={{ width: CELL, height: CELL, backgroundColor: 'transparent' }}
+                            />
+                          );
+                        }
+                        return (
+                          <div
+                            key={day.date}
+                            style={{
+                              width: CELL,
+                              height: CELL,
+                              borderRadius: 2,
+                              backgroundColor: day.active ? activeColor : emptyColor,
+                              outline: day.isToday ? '1px solid #888' : 'none',
+                              outlineOffset: 1,
+                            }}
+                            onMouseEnter={() => setHoveredDay(day)}
+                            onMouseLeave={() => setHoveredDay(null)}
+                          />
+                        );
+                      })}
+                    </div>
+                  ))}
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
 
           {/* Hover info */}
-          <div className="h-5 mt-2">
-            {hoveredDay && (
+          <div className="h-5 mt-2 ml-8">
+            {hoveredDay ? (
               <span className="text-[11px] text-gray-500 dark:text-gray-400">
-                {new Date(hoveredDay.date + 'T00:00:00').toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' })}
+                {new Date(hoveredDay.date + 'T00:00:00').toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' })}
                 {hoveredDay.active && <span className="text-green-600 dark:text-green-400 font-medium"> — worked out</span>}
               </span>
+            ) : (
+              <span className="text-[11px] text-gray-400 dark:text-gray-600">Hover a day</span>
             )}
           </div>
         </div>
