@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
 import { Calendar, ArrowRight, ExternalLink, MapPin, Star, ChevronRight, Search } from 'lucide-react';
 import { thoughts, learnings, projects, events, aboutInfo } from '../data/mock';
 import { ScrollArea } from './ui/scroll-area';
@@ -8,6 +10,7 @@ import RecommendationsContent from './RecommendationsContent';
 
 const WindowModal = ({ type, onClose }) => {
   const [selectedThought, setSelectedThought] = useState(null);
+  const [selectedLearning, setSelectedLearning] = useState(null);
 
   const renderContent = () => {
     switch (type) {
@@ -63,10 +66,18 @@ const WindowModal = ({ type, onClose }) => {
                     </div>
                   )}
                   <ScrollArea className="flex-1">
-                    <div className="p-6">
-                      <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                    <div className="p-6 prose prose-sm dark:prose-invert max-w-none
+                      prose-headings:font-semibold prose-headings:text-gray-800 dark:prose-headings:text-gray-100
+                      prose-p:text-gray-600 dark:prose-p:text-gray-300 prose-p:leading-relaxed
+                      prose-strong:text-gray-800 dark:prose-strong:text-gray-100
+                      prose-em:text-gray-700 dark:prose-em:text-gray-300
+                      prose-blockquote:border-yellow-400 prose-blockquote:text-gray-500 dark:prose-blockquote:text-gray-400
+                      prose-hr:border-gray-200 dark:prose-hr:border-gray-700
+                      prose-table:text-sm prose-th:text-gray-700 dark:prose-th:text-gray-300
+                      prose-code:text-yellow-700 dark:prose-code:text-yellow-300">
+                      <ReactMarkdown remarkPlugins={[remarkGfm]}>
                         {selectedThought.content || selectedThought.excerpt}
-                      </p>
+                      </ReactMarkdown>
                     </div>
                   </ScrollArea>
                 </>
@@ -86,47 +97,59 @@ const WindowModal = ({ type, onClose }) => {
           </div>
         );
 
-      case 'learnings':
+      case 'learnings': {
         return learnings.length > 0 ? (
           <div className="flex h-full">
+            {/* Sidebar */}
             <div className="w-64 border-r border-gray-200 dark:border-gray-700 bg-orange-50/30 dark:bg-gray-800/30 flex flex-col">
-              <div className="p-3 border-b border-gray-200 dark:border-gray-700">
-                <h3 className="font-semibold text-gray-800 dark:text-gray-200">Categories</h3>
-              </div>
-              <div className="p-2 space-y-1">
-                {['All', 'Work', 'Life', 'Relationships', 'Observation'].map((cat) => (
-                  <button
-                    key={cat}
-                    className="w-full text-left px-3 py-2 rounded-lg text-sm hover:bg-orange-100 dark:hover:bg-orange-900/20 text-gray-700 dark:text-gray-300 transition-colors"
-                  >
-                    {cat}
-                  </button>
-                ))}
-              </div>
-            </div>
-            <ScrollArea className="flex-1">
-              <div className="p-6 space-y-4">
-                {learnings.map((learning) => (
-                  <div 
-                    key={learning.id}
-                    className="p-4 bg-white dark:bg-gray-800 rounded-xl border border-gray-100 dark:border-gray-700 hover:shadow-md transition-shadow"
-                  >
-                    <div className="flex items-start justify-between gap-4">
-                      <div className="flex-1">
-                        <div className="flex items-center gap-2 mb-2">
-                          <Badge variant="secondary" className="text-xs bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300">
-                            {learning.category}
-                          </Badge>
-                          <span className="text-xs text-gray-400">{learning.date}</span>
-                        </div>
-                        <h3 className="font-semibold text-gray-800 dark:text-gray-100">{learning.title}</h3>
-                        <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">{learning.content}</p>
+              <ScrollArea className="flex-1">
+                <div className="p-2">
+                  {learnings.map((learning) => (
+                    <div
+                      key={learning.id}
+                      onClick={() => setSelectedLearning(learning)}
+                      className={`p-3 rounded-lg cursor-pointer mb-1 transition-colors ${
+                        selectedLearning?.id === learning.id
+                          ? 'bg-orange-100 dark:bg-orange-900/30'
+                          : 'hover:bg-gray-100 dark:hover:bg-gray-700/50'
+                      }`}
+                    >
+                      <div className="flex items-center gap-2 mb-1">
+                        <Badge variant="secondary" className="text-[10px] px-1.5 py-0 bg-orange-100 dark:bg-orange-900/30 text-orange-700 dark:text-orange-300">
+                          {learning.category}
+                        </Badge>
+                        <span className="text-xs text-gray-400">{learning.date}</span>
                       </div>
+                      <h4 className="font-medium text-sm text-gray-800 dark:text-gray-200 line-clamp-2">{learning.title}</h4>
+                      <p className="text-xs text-gray-400 dark:text-gray-500 mt-1 line-clamp-2">{learning.excerpt}</p>
                     </div>
+                  ))}
+                </div>
+              </ScrollArea>
+            </div>
+            {/* Content */}
+            <div className="flex-1 flex flex-col">
+              {selectedLearning ? (
+                <ScrollArea className="flex-1">
+                  <div className="p-6 prose prose-sm dark:prose-invert max-w-none
+                    prose-headings:font-semibold prose-headings:text-gray-800 dark:prose-headings:text-gray-100
+                    prose-p:text-gray-600 dark:prose-p:text-gray-300 prose-p:leading-relaxed
+                    prose-strong:text-gray-800 dark:prose-strong:text-gray-100
+                    prose-blockquote:border-orange-400 prose-blockquote:text-gray-500 dark:prose-blockquote:text-gray-400
+                    prose-hr:border-gray-200 dark:prose-hr:border-gray-700
+                    prose-table:text-sm prose-th:text-gray-700 dark:prose-th:text-gray-300
+                    prose-li:text-gray-600 dark:prose-li:text-gray-300">
+                    <ReactMarkdown remarkPlugins={[remarkGfm]}>
+                      {selectedLearning.content}
+                    </ReactMarkdown>
                   </div>
-                ))}
-              </div>
-            </ScrollArea>
+                </ScrollArea>
+              ) : (
+                <div className="flex-1 flex items-center justify-center text-gray-400">
+                  Select a piece to read
+                </div>
+              )}
+            </div>
           </div>
         ) : (
           <div className="flex items-center justify-center h-full text-gray-400 dark:text-gray-500">
@@ -136,6 +159,7 @@ const WindowModal = ({ type, onClose }) => {
             </div>
           </div>
         );
+      }
 
       case 'projects':
         return projects.length > 0 ? (
