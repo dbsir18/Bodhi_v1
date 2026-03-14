@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { Calendar, ArrowRight, ExternalLink, MapPin, Star, ChevronRight, Search } from 'lucide-react';
+import { Calendar, ExternalLink, MapPin, ChevronRight, Search } from 'lucide-react';
 import { thoughts, learnings, projects, events, aboutInfo } from '../data/mock';
 import { ScrollArea } from './ui/scroll-area';
 import { Badge } from './ui/badge';
@@ -131,6 +131,16 @@ const WindowModal = ({ type, onClose }) => {
             <div className="flex-1 flex flex-col">
               {selectedLearning ? (
                 <ScrollArea className="flex-1">
+                  {selectedLearning.coverImage && (
+                    <div className="h-48 relative shrink-0">
+                      <img src={selectedLearning.coverImage} alt={selectedLearning.title} className="w-full h-full object-cover" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                      <div className="absolute bottom-4 left-6 right-6">
+                        <h2 className="text-2xl font-bold text-white">{selectedLearning.title}</h2>
+                        <p className="text-white/70 text-sm mt-1">{selectedLearning.date}</p>
+                      </div>
+                    </div>
+                  )}
                   <div className="p-6 prose prose-sm dark:prose-invert max-w-none
                     prose-headings:font-semibold prose-headings:text-gray-800 dark:prose-headings:text-gray-100
                     prose-p:text-gray-600 dark:prose-p:text-gray-300 prose-p:leading-relaxed

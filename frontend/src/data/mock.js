@@ -89,12 +89,13 @@ export const thoughts = [
     id: 1,
     title: "Export Your Culture",
     date: "Feb 2026",
-    excerpt: "India has the richest narrative tradition on earth. The cultural trade deficit closes with gravity — a stranger pausing to zoom in on a detail an Indian studio got right.",
+    coverImage: "/images/covers/aoe-elephants.png",
+    excerpt: "India has the richest narrative tradition on earth. The cultural trade deficit closes with gravity - a stranger pausing to zoom in on a detail an Indian studio got right.",
     content: `# Export Your Culture
 
 I was twelve when I first saw an Indian king in a video game.
 
-Age of Empires II. The "Indians" civilization. War elephants draped in red and gold cloth, curved swords, the Delhi Sultanate campaign. I remember pausing the game to zoom in on the elephant units. Someone had cared enough to get the details right — the decorative howdah, the trunk raised in battle, the way the rider held his spear.
+Age of Empires II. The "Indians" civilization. War elephants draped in red and gold cloth, curved swords, the Delhi Sultanate campaign. I remember pausing the game to zoom in on the elephant units. Someone had cared enough to get the details right - the decorative howdah, the trunk raised in battle, the way the rider held his spear.
 
 I had never felt so *seen* by a piece of media.
 
@@ -110,13 +111,13 @@ Twenty-five years later, the answer is still mostly: nowhere. But for the first 
 
 In 1945, Japan was a defeated military empire. Atomic bombs had just fallen. The country was synonymous with war, imperialism, and generational trauma across Asia.
 
-Eighty years later, Japan welcomed 42.7 million foreign tourists in 2025 — more visitors than the country has citizens under age 35. They spent $60 billion. Japan ranks 4th on the Global Soft Power Index. Four of the ten highest-grossing media franchises in human history are Japanese: Pokemon ($115 billion+), Hello Kitty, Mario, Anpanman. The Japanese government now targets ¥20 trillion — roughly $130 billion — in overseas content sales by 2033. Nearly double the value of all the cars Japan exports annually.
+Eighty years later, Japan welcomed 42.7 million foreign tourists in 2025 - more visitors than the country has citizens under age 35. They spent $60 billion. Japan ranks 4th on the Global Soft Power Index. Four of the ten highest-grossing media franchises in human history are Japanese: Pokemon ($115 billion+), Hello Kitty, Mario, Anpanman. The Japanese government now targets ¥20 trillion - roughly $130 billion - in overseas content sales by 2033. Nearly double the value of all the cars Japan exports annually.
 
 This didn't happen organically. Cool Japan was a $1.3 billion government investment in exporting anime, manga, and games as strategic instruments of national image. Japan's post-war constitution banned rebuilding conventional military power. So they rebuilt through stories instead.
 
 Korea ran the same playbook, harder. In the 1990s, South Korea was known for the Korean War, Samsung, and cheap manufacturing. Zero global cultural presence. Then the 1997 Asian financial crisis hit, and President Kim Dae-jung made a bet: cultural export as state priority. Ten trillion won in policy financing. Content business centers in fifty countries.
 
-It worked. Korean content now accounts for 8% of all Netflix streams globally — second only to the United States. Squid Game debuted at #1 in all 93 countries where Netflix has top 10 lists — and drove a 76% surge in Korean language learners on Duolingo in the UK. A TV show made British teenagers want to learn Korean.
+It worked. Korean content now accounts for 8% of all Netflix streams globally - second only to the United States. Squid Game debuted at #1 in all 93 countries where Netflix has top 10 lists - and drove a 76% surge in Korean language learners on Duolingo in the UK. A TV show made British teenagers want to learn Korean.
 
 India barely has a position.
 
@@ -128,17 +129,17 @@ India ranks 29th on the Global Soft Power Index. Japan is 4th.
 
 India welcomed 9.95 million foreign tourists in 2024. Eleven times Japan's population, less than a quarter the visitors.
 
-India owns zero of the top fifty highest-grossing media franchises globally. Japan owns four of the top ten — all born from stories it exported.
+India owns zero of the top fifty highest-grossing media franchises globally. Japan owns four of the top ten - all born from stories it exported.
 
 On Duolingo, Japanese is the 4th most studied language in the world. Korean is 6th. Hindi doesn't crack the top ten. And *within India*, Korean language learning grew 75% year-over-year. Indian kids are learning Korean because K-dramas and BTS made them fall in love with Korean culture. No one outside India is learning Hindi because of Indian entertainment.
 
-India imports stories at massive scale — Marvel, anime, K-pop, Netflix originals. The world imports approximately nothing from India. And the stories the world *does* have about India weren't written by Indians.
+India imports stories at massive scale - Marvel, anime, K-pop, Netflix originals. The world imports approximately nothing from India. And the stories the world *does* have about India weren't written by Indians.
 
 Steven Spielberg wrote one: *Indiana Jones and the Temple of Doom*. Monkey brains, human sacrifice, child slavery, a white American rescuing helpless villagers. The Indian government banned it. It grossed $333 million anyway.
 
 The Simpsons wrote another: Apu Nahasapeemapetilon. For thirty years, the most prominent Indian character on American television was voiced by a white actor doing an impression of a white guy making fun of someone's father. Hank Azaria eventually apologized "to every single Indian person in this country." A generation of accent jokes had already been absorbed.
 
-Danny Boyle wrote one more: *Slumdog Millionaire*. A British director makes a film about Indian poverty, wins eight Oscars, grosses $379 million. India's most globally visible film of the 2000s — and it's a slum story, told by an outsider looking in.
+Danny Boyle wrote one more: *Slumdog Millionaire*. A British director makes a film about Indian poverty, wins eight Oscars, grosses $379 million. India's most globally visible film of the 2000s - and it's a slum story, told by an outsider looking in.
 
 India in Western media is exotic-mystical-land or poverty-backdrop. There is no third option, because India hasn't written one.
 
@@ -146,21 +147,21 @@ India in Western media is exotic-mystical-land or poverty-backdrop. There is no 
 
 ## Closing the Deficit
 
-The conditions for export are different now. AI-native production collapsed costs. Streaming eliminated distribution gatekeepers — RRR went from regional Telugu release to Netflix top 10 in 62 countries with no international strategy. And Black Myth: Wukong — a Chinese game steeped in Taoist tradition, zero Western concessions — crossed $1 billion on Steam, collapsing the risk premium on "too culturally specific."
+The conditions for export are different now. AI-native production collapsed costs. Streaming eliminated distribution gatekeepers - RRR went from regional Telugu release to Netflix top 10 in 62 countries with no international strategy. And Black Myth: Wukong - a Chinese game steeped in Taoist tradition, zero Western concessions - crossed $1 billion on Steam, collapsing the risk premium on "too culturally specific."
 
 RRR is the clearest proof that gravity is possible. Nine consecutive weeks in the top non-English films on Netflix, Golden Globe for Best Original Song, standing ovation at the TCL Chinese Theatre from an American audience with zero connection to Telugu cinema.
 
-Games may be where the deeper opportunity sits. Film is passive — you watch a story. Games are interactive — you *inhabit* one. When Ghost of Tsushima made players feel Japanese culture so deeply that Sucker Punch, an American studio in Seattle, was named official tourism ambassador by the Japanese government, it proved something no Kurosawa film could: games create emotional ownership of a culture.
+Games may be where the deeper opportunity sits. Film is passive - you watch a story. Games are interactive - you *inhabit* one. When Ghost of Tsushima made players feel Japanese culture so deeply that Sucker Punch, an American studio in Seattle, was named official tourism ambassador by the Japanese government, it proved something no Kurosawa film could: games create emotional ownership of a culture.
 
 Age of Bhaarat is the most interesting studio-level bet being placed right now. They refuse to call the stories "myths." They call them "Indian epics." You don't play as Lord Ram. You play as a forest warden protecting the land from Rakshasa demons. Same universe, different entry point. Deeply rooted, never preachy.
 
-India has capital. It has stories. It now has distribution. What it doesn't have is the craft layer — the talent pipelines, the writer-first culture, the game design programs, the narrative design training — that turns raw material into products with gravity. Volume without craft produces content graveyards. Korea didn't become a cultural superpower by producing eight hundred dramas. It became one by producing Squid Game.
+India has capital. It has stories. It now has distribution. What it doesn't have is the craft layer - the talent pipelines, the writer-first culture, the game design programs, the narrative design training - that turns raw material into products with gravity. Volume without craft produces content graveyards. Korea didn't become a cultural superpower by producing eight hundred dramas. It became one by producing Squid Game.
 
 ---
 
-India's image will be rewritten in the next decade. The economics make it possible for the first time — production costs collapsing, distribution global on day one, capital institutional rather than shoestring. The stories have always been here.
+India's image will be rewritten in the next decade. The economics make it possible for the first time - production costs collapsing, distribution global on day one, capital institutional rather than shoestring. The stories have always been here.
 
-The cultural trade deficit closes with gravity — a stranger pausing to zoom in on a detail an Indian studio got right, wanting to know more about a culture they never knew they needed.
+The cultural trade deficit closes with gravity - a stranger pausing to zoom in on a detail an Indian studio got right, wanting to know more about a culture they never knew they needed.
 
 Japan built that gravity. Korea built that gravity. Thirty years after a studio in Dallas made a twelve-year-old in India feel seen, Indian studios are trying to build their own.`,
   },
@@ -168,10 +169,11 @@ Japan built that gravity. Korea built that gravity. Thirty years after a studio 
     id: 2,
     title: "Diet Pills & Pegs",
     date: "Mar 2026",
+    coverImage: "/images/covers/martini-art.png",
     excerpt: "India's alcohol market crossed Rs 5.3 lakh crore this year. On March 20, 2026, Novo Nordisk's patent on semaglutide expires in India. These two facts haven't met each other yet.",
     content: `# Diet Pills & Pegs
 
-India's alcohol market crossed Rs 5.3 lakh crore this year — retail value, including excise. Growing 8-10% annually. Agave spirits are posting triple-digit growth. Indian craft gin is winning international awards. Indri, a single malt made in Haryana, outsold Glenfiddich and Glenlivet in India last year to become the country's top-selling single malt. Walk into any serious bar in Indiranagar or Bandra and you'll find Rs 12,000 bottles of small-batch gin, bartenders doing global takeover nights with ticketed entry, and an Old Fashioned that costs more than your Swiggy order for the week.
+India's alcohol market crossed Rs 5.3 lakh crore this year - retail value, including excise. Growing 8-10% annually. Agave spirits are posting triple-digit growth. Indian craft gin is winning international awards. Indri, a single malt made in Haryana, outsold Glenfiddich and Glenlivet in India last year to become the country's top-selling single malt. Walk into any serious bar in Indiranagar or Bandra and you'll find Rs 12,000 bottles of small-batch gin, bartenders doing global takeover nights with ticketed entry, and an Old Fashioned that costs more than your Swiggy order for the week.
 
 Money has noticed. Alcobev stocks delivered 30-60% returns in the past year. Radico Khaitan's net profit surged 69% in a single quarter. Capital is pouring into craft distilleries, premium brand-building, and experience-driven bars. Everyone is betting the same way.
 
@@ -181,9 +183,9 @@ This month, that bet meets a variable the industry hasn't stress-tested.
 
 ---
 
-On March 20, 2026, Novo Nordisk's patent on semaglutide expires in India. At least ten Indian pharma companies — Sun Pharma, Cipla, Dr. Reddy's, Zydus, Biocon, Lupin, among others — already have DCGI approval to manufacture generics. Sun Pharma's weight-loss brand is called Noveltreat. It's already being marketed. Prices are expected to fall 70-90% from branded levels. Jefferies projects the Indian semaglutide market alone could hit $1 billion.
+On March 20, 2026, Novo Nordisk's patent on semaglutide expires in India. At least ten Indian pharma companies - Sun Pharma, Cipla, Dr. Reddy's, Zydus, Biocon, Lupin, among others - already have DCGI approval to manufacture generics. Sun Pharma's weight-loss brand is called Noveltreat. It's already being marketed. Prices are expected to fall 70-90% from branded levels. Jefferies projects the Indian semaglutide market alone could hit $1 billion.
 
-Ozempic and Mounjaro — the two names that have become cultural shorthand for weight-loss drugs globally — work by mimicking gut hormones that regulate appetite and reward. They were designed for diabetes and obesity. Millions of people are taking them to lose weight.
+Ozempic and Mounjaro - the two names that have become cultural shorthand for weight-loss drugs globally - work by mimicking gut hormones that regulate appetite and reward. They were designed for diabetes and obesity. Millions of people are taking them to lose weight.
 
 They also, as it turns out, make people stop wanting to drink.
 
@@ -193,7 +195,7 @@ They also, as it turns out, make people stop wanting to drink.
 
 The US is roughly 18-24 months ahead of India on this curve.
 
-US spirits sales fell 2.2% in 2025, to $36.4 billion — what Bank of America estimates is the fourth consecutive year of per-capita decline. Over 250 breweries have closed. Five distilleries filed for Chapter 11 bankruptcy.
+US spirits sales fell 2.2% in 2025, to $36.4 billion - what Bank of America estimates is the fourth consecutive year of per-capita decline. Over 250 breweries have closed. Five distilleries filed for Chapter 11 bankruptcy.
 
 It's tempting to draw a straight line from GLP-1 adoption to this decline. Too clean. The US alcohol downturn has at least four independent drivers: the Surgeon General's advisory linking alcohol to cancer, Gen Z's generational turn away from drinking, tariff-driven export disruption, and GLP-1 adoption.
 
@@ -207,15 +209,15 @@ GLP-1 is a different *kind* of variable. Health advisories fade. Generational tr
 
 There are two ways alcohol revenue can decline. They look identical on a chart. They're not.
 
-**Demand substitution** is what happens when someone switches from gin to a non-alcoholic botanical spirit. The desire for the ritual — the bar, the glass, the social occasion — stays intact. The product changes. Revenue migrates within the ecosystem. The industry has always adapted to this.
+**Demand substitution** is what happens when someone switches from gin to a non-alcoholic botanical spirit. The desire for the ritual - the bar, the glass, the social occasion - stays intact. The product changes. Revenue migrates within the ecosystem. The industry has always adapted to this.
 
 **Demand destruction** is what happens when the desire itself fades. Not because you've made a conscious choice. Not because you read a warning label. But because the neurochemical machinery that made alcohol pleasurable is operating differently.
 
 Early evidence suggests that GLP-1 drugs produce demand destruction, not substitution.
 
-GLP-1 receptors exist not just in the gut but in brain regions governing reward and motivation — the same GABA pathway through which alcohol produces its rewarding effects. Semaglutide modulates that pathway. A phase 2 trial showed reduced cravings and consumption in users.
+GLP-1 receptors exist not just in the gut but in brain regions governing reward and motivation - the same GABA pathway through which alcohol produces its rewarding effects. Semaglutide modulates that pathway. A phase 2 trial showed reduced cravings and consumption in users.
 
-The distinction holds. The sober-curious movement is a cultural wave — reversible, trend-dependent, responsive to marketing. Pharmacology persists as long as the prescription does. That's the reward bypass.
+The distinction holds. The sober-curious movement is a cultural wave - reversible, trend-dependent, responsive to marketing. Pharmacology persists as long as the prescription does. That's the reward bypass.
 
 ---
 
@@ -225,37 +227,37 @@ Anyone operating in India's alcohol market has the same response: "That's Americ
 
 They're right. And the differences are real.
 
-Indian drinking is occasion-based, not habitual — weekends, celebrations, the farmhouse party. GLP-1's reward suppression hits daily habits hardest; India's pattern may be naturally insulated. The demographic overlap is thinner than it looks. And adoption friction is real: injectable needles, cold-chain requirements, no insurance coverage, conservative doctors.
+Indian drinking is occasion-based, not habitual - weekends, celebrations, the farmhouse party. GLP-1's reward suppression hits daily habits hardest; India's pattern may be naturally insulated. The demographic overlap is thinner than it looks. And adoption friction is real: injectable needles, cold-chain requirements, no insurance coverage, conservative doctors.
 
 Going from zero to meaningful adoption here is at least a three-to-five-year arc. All fair.
 
-But GLP-1 adoption moves in two waves. The first is clinical — doctor-prescribed, BMI above 30, managing obesity or diabetes. That cohort overlaps with the alcohol market but doesn't drive its premium growth.
+But GLP-1 adoption moves in two waves. The first is clinical - doctor-prescribed, BMI above 30, managing obesity or diabetes. That cohort overlaps with the alcohol market but doesn't drive its premium growth.
 
-The second wave is vanity adoption. The person who isn't clinically obese but wants to lose 5-7 kg. That person is 28, not 45 — at Sidecar on Saturday night, not a metabolic health seminar. When oral semaglutide arrives — no injection, no refrigeration, just a daily tablet from your nearby medical store or a Blinkit order that shows up in ten minutes — the friction that currently limits adoption collapses.
+The second wave is vanity adoption. The person who isn't clinically obese but wants to lose 5-7 kg. That person is 28, not 45 - at Sidecar on Saturday night, not a metabolic health seminar. When oral semaglutide arrives - no injection, no refrigeration, just a daily tablet from your nearby medical store or a Blinkit order that shows up in ten minutes - the friction that currently limits adoption collapses.
 
-Look at any urban social circle and the contours are hard to ignore. Friends in their late twenties and thirties — the type who split weekends between a CrossFit class and a craft cocktail bar. People who track macros on HealthifyMe and order Rs 1,500 cocktails without blinking. People who quite possibly would take an affordable pill that helped them look sharper in wedding photos. Not today. But in two years? Three?
+Look at any urban social circle and the contours are hard to ignore. Friends in their late twenties and thirties - the type who split weekends between a CrossFit class and a craft cocktail bar. People who track macros on HealthifyMe and order Rs 1,500 cocktails without blinking. People who quite possibly would take an affordable pill that helped them look sharper in wedding photos. Not today. But in two years? Three?
 
-Even in occasion-based drinking, there's a transition point — usually around the second or third drink — where the evening shifts from social to chemical. The first drink is peer pressure. The second is the one your brain rewards you for. GLP-1 drugs suppress exactly that transition.
+Even in occasion-based drinking, there's a transition point - usually around the second or third drink - where the evening shifts from social to chemical. The first drink is peer pressure. The second is the one your brain rewards you for. GLP-1 drugs suppress exactly that transition.
 
-In an industry where margins concentrate in the third, fourth, and fifth drink — where the tab goes from Rs 1,500 to Rs 5,000 — that per-occasion compression matters more than a few people skipping the party entirely.
+In an industry where margins concentrate in the third, fourth, and fifth drink - where the tab goes from Rs 1,500 to Rs 5,000 - that per-occasion compression matters more than a few people skipping the party entirely.
 
 ---
 
 ## What Breaks, What Grows
 
-India's Rs 5.3 lakh crore alcohol market is enormous in the headline number. The reality underneath it is a pyramid. Premium spirits above Rs 1,000 a bottle are maybe 10-12% of total volume. That thin top of the pyramid, though, accounts for 40-45% of the entire IMFL category's value — and is growing at 13-14% annually. Every new distillery, every craft brand, every Rs 1,500 cocktail bar is betting on that slice.
+India's Rs 5.3 lakh crore alcohol market is enormous in the headline number. The reality underneath it is a pyramid. Premium spirits above Rs 1,000 a bottle are maybe 10-12% of total volume. That thin top of the pyramid, though, accounts for 40-45% of the entire IMFL category's value - and is growing at 13-14% annually. Every new distillery, every craft brand, every Rs 1,500 cocktail bar is betting on that slice.
 
 GLP-1 doesn't touch country liquor. It doesn't touch the guy having two Kingfishers after a shift. It touches exactly the person spending Rs 3,000 on a Friday night at a premium bar.
 
 The capital decisions being locked in right now are what make this urgent. Craft distilleries are being built today with five-year payback assumptions. Bar leases are being signed at rents justified by alcohol margins. These are irreversible commitments maturing in exactly the window where GLP-1 adoption starts bending the premium demand curve.
 
-GLP-1 drugs, even at generic prices, will be adopted first by the affluent — the same cohort that drives premium alcohol consumption. The industry's most valuable customer segment is the first to leave.
+GLP-1 drugs, even at generic prices, will be adopted first by the affluent - the same cohort that drives premium alcohol consumption. The industry's most valuable customer segment is the first to leave.
 
 ---
 
 Every five-year plan in the alcohol industry assumes India drinks more and pays more per drink. That assumption has been reliable for a decade. Nothing in the cultural or demographic data contradicts it.
 
-What contradicts it is a molecule — designed for a different purpose, whose effect on alcohol consumption was discovered by accident, operating below the level of conscious choice. India's pharma industry is about to make it available at a price point where adoption becomes a lifestyle decision.
+What contradicts it is a molecule - designed for a different purpose, whose effect on alcohol consumption was discovered by accident, operating below the level of conscious choice. India's pharma industry is about to make it available at a price point where adoption becomes a lifestyle decision.
 
 The industry calls it a health trend. The pharmacologist calls it GABA modulation. You can adapt to a trend. You can't outmarket neuroscience.
 
@@ -267,9 +269,10 @@ export const learnings = [
   {
     id: 1,
     title: "The Chief of Staff Equation",
-    date: "2026",
+    date: "Feb 2026",
+    coverImage: "/images/covers/cos-types.png",
     category: "Work",
-    excerpt: "Exposure vs. Evidence. The CoS seat gives you breadth without forcing depth — and without intentionally driving a spike, the breadth alone stops compounding.",
+    excerpt: "Exposure vs. Evidence. The CoS seat gives you breadth without forcing depth - and without intentionally driving a spike, the breadth alone stops compounding.",
     content: `# The Chief of Staff Equation
 
 No role at an early-stage startup compresses learning the way Chief of Staff does. You're building the fundraise model on a Tuesday, debriefing a candidate on Wednesday, and sitting in a product review Thursday morning where you have to tell the engineering lead the feature they scoped doesn't match what the investor deck promised. All of that is your problem. In under a year, you develop pattern recognition that takes most operators years to build.
@@ -282,33 +285,33 @@ The role gave me an education I couldn't have gotten anywhere else. But the equa
 
 ## The Inversion
 
-The CoS seat was built as a broadening move. You've spent a decade being *known for something* — deep product sense, financial rigor, operational command — and the role adds range on top of that foundation. Breadth layered over an established spike.
+The CoS seat was built as a broadening move. You've spent a decade being *known for something* - deep product sense, financial rigor, operational command - and the role adds range on top of that foundation. Breadth layered over an established spike.
 
-When you take it at 23, the order reverses. Breadth first, depth later. That inversion changes the math — and it plays out in a specific, predictable way as the company scales.
+When you take it at 23, the order reverses. Breadth first, depth later. That inversion changes the math - and it plays out in a specific, predictable way as the company scales.
 
 ---
 
 ## The Scaling Dynamic
 
-Phase 1 — you join early. The founder trusts you with things no one at your experience level would normally touch: fundraising decks, hiring calls, product decisions.
+Phase 1 - you join early. The founder trusts you with things no one at your experience level would normally touch: fundraising decks, hiring calls, product decisions.
 
-You learn how companies actually make decisions — not how org charts describe it, but how power moves when the founder is in the room. How a fundraise really works. How to tell which problems are fires and which are just loud.
+You learn how companies actually make decisions - not how org charts describe it, but how power moves when the founder is in the room. How a fundraise really works. How to tell which problems are fires and which are just loud.
 
 Nine months in, I could jump into any conversation and hold my own. I was the person who *made things happen*.
 
-Phase 2 — the company raises money. It needs to professionalize. Specialists walk in with mandates: a VP of Product from Google, a CFO who has taken companies public, a Head of Engineering who has scaled teams past 200.
+Phase 2 - the company raises money. It needs to professionalize. Specialists walk in with mandates: a VP of Product from Google, a CFO who has taken companies public, a Head of Engineering who has scaled teams past 200.
 
-In Indian startups, this phase has a specific texture. Founders remain the gravitational center longer than in most ecosystems. They professionalize around themselves — adding layers while keeping the same tight orbit. Your access doesn't drop suddenly. It erodes. You're still close enough to feel important, but decisions start happening in conversations you're no longer part of.
+In Indian startups, this phase has a specific texture. Founders remain the gravitational center longer than in most ecosystems. They professionalize around themselves - adding layers while keeping the same tight orbit. Your access doesn't drop suddenly. It erodes. You're still close enough to feel important, but decisions start happening in conversations you're no longer part of.
 
-I remember the week three new vertical leads started — product, engineering, growth. Suddenly every function had its own cadence: weekly standups I wasn't invited to, dashboards I didn't own, OKRs I hadn't shaped. The founder's calendar filled with reviews I used to run.
+I remember the week three new vertical leads started - product, engineering, growth. Suddenly every function had its own cadence: weekly standups I wasn't invited to, dashboards I didn't own, OKRs I hadn't shaped. The founder's calendar filled with reviews I used to run.
 
-I was still at the company. I was no longer *of* it — not in the way I had been.
+I was still at the company. I was no longer *of* it - not in the way I had been.
 
 Not because something went wrong. Because the company did exactly what it was supposed to do.
 
 That's one version. There's another.
 
-Some people see Phase 2 coming and use Phase 1 differently. They don't just accumulate access — they pick a domain within their breadth and go deep enough to own it. The CoS who builds the internal data pipeline and becomes the de facto analytics lead. The one who runs the first few product launches and earns the product seat when it formalizes. The one who owns the revenue model so completely that the incoming Business Head asks them to stay on the business team.
+Some people see Phase 2 coming and use Phase 1 differently. They don't just accumulate access - they pick a domain within their breadth and go deep enough to own it. The CoS who builds the internal data pipeline and becomes the de facto analytics lead. The one who runs the first few product launches and earns the product seat when it formalizes. The one who owns the revenue model so completely that the incoming Business Head asks them to stay on the business team.
 
 These people don't avoid the scaling dynamic. They use the access of Phase 1 to audition across functions, then place a bet before Phase 2 forces one on them.
 
@@ -322,21 +325,21 @@ A product lead who spent three years shipping one product says: "I took this fro
 
 Generalist contributions are real. They're also invisible in the ways that matter for your next move.
 
-Identity drift is subtler. You become "pretty good at many things, great at nothing." Senior roles go to people *known* for something — "she's incredible at product strategy," "he's the best ops person I've worked with." Those reputations take years of focused work. The CoS seat gives you breadth without forcing depth — and without intentionally driving a spike alongside that breadth, the breadth alone stops compounding.
+Identity drift is subtler. You become "pretty good at many things, great at nothing." Senior roles go to people *known* for something - "she's incredible at product strategy," "he's the best ops person I've worked with." Those reputations take years of focused work. The CoS seat gives you breadth without forcing depth - and without intentionally driving a spike alongside that breadth, the breadth alone stops compounding.
 
-Then there's career ownership — the quietest pressure. Proximity to the founder creates a feeling that they must be thinking about your future too. They might be. But their job is the company. "Let's revisit after the fundraise." "We really need you here right now." That's the founder being a founder. People who navigate this well treat their career as a separate project from day one — parallel to the company's needs, not subordinate to them.
+Then there's career ownership - the quietest pressure. Proximity to the founder creates a feeling that they must be thinking about your future too. They might be. But their job is the company. "Let's revisit after the fundraise." "We really need you here right now." That's the founder being a founder. People who navigate this well treat their career as a separate project from day one - parallel to the company's needs, not subordinate to them.
 
 ---
 
 ## Exposure vs. Evidence
 
-There's a specific type of generalist this dynamic catches: the one who accumulates *exposure* — conversations had, functions touched, meetings attended — without accumulating *evidence* — things built, things shipped, things that exist in the world that they can point to.
+There's a specific type of generalist this dynamic catches: the one who accumulates *exposure* - conversations had, functions touched, meetings attended - without accumulating *evidence* - things built, things shipped, things that exist in the world that they can point to.
 
 For months, I was that person. Broad knowledge of the company, a seat at every important meeting, and nothing I could put on a table and say *I made this*.
 
 You learn to read founder dynamics, parse investor incentives, tell the difference between a structural problem and a noisy one. That knowledge is real. But it doesn't show up on a resume and nobody can verify it in an interview.
 
-What does show up: the internal tool you built that the sales team still uses. The automation that cut a weekly 4-hour process to 20 minutes. The side project you shipped on a weekend that proves you can take something from zero to live. AI has collapsed the distance between thinking across functions and building across them — a generalist who can prototype, automate workflows, and ship without a team has never had a shorter path from exposure to evidence.
+What does show up: the internal tool you built that the sales team still uses. The automation that cut a weekly 4-hour process to 20 minutes. The side project you shipped on a weekend that proves you can take something from zero to live. AI has collapsed the distance between thinking across functions and building across them - a generalist who can prototype, automate workflows, and ship without a team has never had a shorter path from exposure to evidence.
 
 Exposure is interesting at a dinner party. Evidence is hireable.
 
@@ -348,236 +351,9 @@ The scaling dynamic closes on generalists who collect exposure. It stays open fo
 
 I joined as employee number 4. I sat next to the founder. I worked on everything.
 
-Nine months in, I couldn't tell you what I'd built that was mine. Figuring that out — building things I could point to, not just access I could describe — is what made the next move possible.
+Nine months in, I couldn't tell you what I'd built that was mine. Figuring that out - building things I could point to, not just access I could describe - is what made the next move possible.
 
-The role serves the company. Your career serves you. Those are two different projects — and you're the only person working on the second one.`,
-  },
-  {
-    id: 2,
-    title: "You're Not Depressed, You Just Don't Have a Quest",
-    date: "2025",
-    category: "Life",
-    excerpt: "Why side quests might be the answer to your anxiety — and how one thing pulls everything else up.",
-    content: `# You're Not Depressed, You Just Don't Have a Quest
-
-*Why side quests might be the answer to your anxiety — and how one thing pulls everything else up.*
-
-My favourite tweet ever says this:
-
-> "You're not depressed, you just don't have a quest. You need to be quest-maxxing."
-
-Read that again.
-
-Not therapy. Not meditation apps. Not "taking a break." A quest. Something to do. Something to get good at. Something that demands your attention and rewards your effort.
-
-Here's the uncomfortable truth: most of your anxiety isn't from doing too much. It's from doing nothing meaningful. You're doom-scrolling at 1 AM not because you're tired, but because your brain has nothing to chew on.
-
-The antidote isn't rest. It's direction.
-
----
-
-## The Ancient Wisdom We Forgot
-
-**"Karm karo, fal ki chinta mat karo."**
-
-Focus on the action, not the outcome. The Bhagavad Gita was saying this thousands of years ago. The insight isn't about productivity — it's about peace. When you're absorbed in meaningful work, anxiety doesn't have room to breathe.
-
-Every guru I've ever listened to says some version of the same thing: an empty mind is the source of anxiety. Not an overworked mind. An empty one. One that has nothing to focus on except its own spirals.
-
-We live in an age of infinite content and zero direction. You can consume forever, but consumption doesn't create calm. Action does.
-
----
-
-## The Framework: Main Quest + Side Quests
-
-Here's how I think about it.
-
-| Quest Type | Definition | Examples |
-|------------|------------|----------|
-| **Main Quest** | Learning & Earning — disproportionate future returns | Job, business, degree, a skill that compounds |
-| **Side Quest** | Anything else that matters to you | Fitness, content, events, teaching, travel, a hobby |
-
-Your **main quest** is non-negotiable. It pays the bills. It builds the future.
-
-Your **side quest** is what makes you feel alive. It's the thing you *chose*, not the thing you had to do. It's optional, which is exactly why it matters.
-
-Most people neglect the side quest because it feels "extra." They're wrong. The side quest is often what keeps the main quest sustainable.
-
----
-
-## The Side Quest Cycle
-
-1. **Pick a side quest.** Just one. Don't overthink it.
-2. **Get really good at it.** Not "participate." Not "try." Get *good*.
-3. **Make your closest people hold you accountable.** Tell your friends. Post about it. Create stakes.
-4. **Once it becomes habit, pick another.** You've now freed up mental energy. Invest it.
-5. **Repeat.**
-
-The key is that each side quest, once mastered, becomes automatic. It stops taking willpower. It just becomes who you are. And that frees you up to take on the next one.
-
----
-
-## My Example: Fitness
-
-I started going to the gym in March 2025. Nothing special — just decided to show up consistently.
-
-Here's what happened:
-
-- **Month 1-2:** Just showed up. 1 hour a day. That was the only goal.
-- **Month 3-4:** Started noticing I was eating better — not because I was "on a diet" but because when you're putting in effort, you naturally don't want to waste it.
-- **Month 4-6:** Eating better meant falling sick less. More energy. Fewer "off" days.
-- **Month 6+:** Started caring about other things. Skin. Sleep. Clothes. The people I spent time with. How I showed up.
-
-I didn't plan any of this. It wasn't a "wellness journey." It was one decision — go to the gym — that cascaded into everything else.
-
-**One side quest pulled everything else up.**
-
-This is the compounding effect no one talks about. You don't need to fix your entire life. You need to fix *one thing*, and let gravity do the rest.
-
----
-
-## Why This Works
-
-**1. Identity shifts happen through action, not intention.**
-You don't become "a fit person" by wanting to be fit. You become a fit person by going to the gym 100 times. The identity follows the behavior.
-
-**2. Small wins create momentum.**
-When you get good at one thing, you start believing you can get good at other things. Confidence transfers.
-
-**3. Accountability creates stakes.**
-When your friends know you're trying to do something, quitting becomes harder.
-
-**4. Habits free up willpower.**
-The first 30 days of a new side quest are hard. After that, it's automatic. That willpower is now available for the next thing.
-
----
-
-## The Anxiety Connection
-
-Why does anxiety spike when you're doing nothing? Why do weekends sometimes feel worse than weekdays?
-
-Because your brain needs a quest.
-
-Not a to-do list. Not "staying busy." A *quest* — something meaningful that you chose, that demands effort, and that creates visible progress.
-
-When you're in the middle of a quest, you don't have time to spiral. You're too focused on the next rep, the next project, the next milestone.
-
-The gurus were right: an empty mind is the devil's workshop. Fill it with something worth doing.
-
----
-
-The ancient texts had it right. The viral tweets have it right. Your gut has it right.
-
-You're not depressed. You just don't have a quest.
-
-Go find one. Get really good at it. Let it pull everything else up.
-
-**Karm karo. Quest karo. Start today.**`,
-  },
-  {
-    id: 3,
-    title: "The Rs 30 Revolution",
-    date: "2025",
-    category: "Observation",
-    excerpt: "How quick commerce is teaching Indians to value time — and why Blinkit might be doing what the industrial revolution never did.",
-    content: `# The Rs 30 Revolution: How Quick Commerce is Teaching Indians to Value Time
-
-*On why Blinkit might be doing what the industrial revolution never did.*
-
-I was listening to Kunal Shah on The Knowledge Project when he said something that stopped me mid-scroll:
-
-> "Time value for money is an interesting concept that doesn't exist for most Indians."
-
-He went on:
-
-> "India never had an industrial revolution. Which means nobody was paid on an hourly basis. If you go to the West, nearly every single person — their first job is generally an hourly job. They worked in a coffee shop or as a teaching assistant. They are paid on an hourly basis. Any country that pays on an hourly basis naturally trains people to value time.
->
-> In India, every single person started with a monthly salary. Therefore, if I ask them what is their income per hour — nobody has a clue. People who make Rs 10,000 an hour spend an hour trying to save Rs 500 on a flight ticket."
-
-Read that last line again.
-
-People earning Rs 10,000 an hour will spend an hour saving Rs 500. The math doesn't math. But we do it anyway — because we were never taught to think about time as money.
-
-Until now.
-
----
-
-## The Old Math
-
-For as long as I can remember, the default Indian logic went something like this:
-
-**"Why would you pay for delivery when the shop is 10 minutes away?"**
-
-The calculation:
-- Delivery fee: Rs 30
-- Going yourself: "Free"
-
-Except... it was never free.
-
----
-
-## The Real Math
-
-Here's what we never counted:
-
-| Hidden Cost | Estimate |
-|-------------|----------|
-| Petrol (round trip) | Rs 40-80 |
-| Parking hassle | Variable (but real) |
-| Time spent (30-45 mins) | ??? |
-| Mental load of "I need to go to the market" | Priceless frustration |
-
-The trip was never Rs 0. We just didn't account for the invisible costs — because we didn't have a framework to value our time.
-
-The delivery fee isn't a waste. It's a bargain.
-
----
-
-## The Moment It Clicked for Me
-
-Once I started thinking about what I earn on a daily or hourly basis, my decision-making changed. Suddenly, paying Rs 30 to save 40 minutes wasn't "lazy." It was rational.
-
-But the real proof came from an unexpected place: my mom.
-
-She asked me: *"How does this actually work? They're giving discounts, it's net cheaper to order and get it delivered home than it is to go and shop."*
-
-She wasn't wrong. Between the discounts, the saved petrol, the time, and the fact that you don't have to deal with parking at the local market — Blinkit was often the *cheaper* option. Not just the convenient one.
-
-When your boomer parents start doing the new math, you know something has shifted.
-
----
-
-## When Brands Become Verbs
-
-Here's how you know a brand has won: it becomes a verb.
-
-"Can you *Xerox* these pages?"
-"Let's *Zomato* dinner tonight."
-"Just *Blinkit* it."
-
-We're not there yet with quick commerce, but we're close. When your default response to "we're out of milk" is to open an app instead of putting on your shoes, the habit has formed.
-
-This is the moat. Not discounts, not delivery speed — habits.
-
-And habits, once formed, are sticky. You might complain when the delivery fee goes from Rs 25 to Rs 35. But you'll still pay it. Because the alternative — going back to the old way — now feels like friction.
-
----
-
-## India's Quiet Revolution
-
-Kunal Shah's insight keeps echoing in my head.
-
-India never had an industrial revolution. We never got paid by the hour. So we never learned, instinctively, that time has a price.
-
-But something interesting is happening.
-
-Every time you pay a delivery fee, you're answering a question: *What is 10 minutes of my time worth?*
-
-Every time you choose the "express" option, you're doing the math — even if subconsciously.
-
-Quick commerce isn't just delivering groceries. It's delivering a lesson. A lesson that, for the first time, is making millions of Indians think about time as something that can be traded, saved, and spent wisely.
-
-The industrial revolution came to India. It just arrived in 10 minutes.`,
+The role serves the company. Your career serves you. Those are two different projects - and you're the only person working on the second one.`,
   },
 ];
 
@@ -761,8 +537,8 @@ export const socialLinks = [
 
 export const aboutInfo = {
   name: "Dhruv Bhargava",
-  title: "Writing about tech, products, and innovation",
-  bio: "Product enthusiast, tech explorer, and lifelong learner. I build things that matter and write about what I learn along the way.",
+  title: "",
+  bio: "",
   location: "India"
 };
 
