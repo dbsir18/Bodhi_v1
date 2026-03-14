@@ -7,7 +7,7 @@ A personal digital workspace inspired by macOS, featuring rotating Bhagavad Gita
 - **Gita Display** — Rotating Bhagavad Gita shlokas with curated artwork, displayed in a framed gallery style
 - **macOS Dock** — Dock-based navigation to Thoughts, Learnings, Projects, Events, and Recommendations
 - **Recommendations** — Sidebar-driven layout with tabs for Wins, Apps, Products, Bars & Places, People, and Content
-- **Gym Heatmap** — GitHub-style contribution calendar tracking gym sessions (under Wins)
+- **Gym Heatmap** — GitHub-style contribution calendar tracking gym sessions from the Hevy app (under Wins), covering July 2025 → present
 - **Spotify Widget** — Embedded playlist integration
 - **Dark Mode** — Follows system preference with manual toggle
 
@@ -45,16 +45,29 @@ Runs at [http://localhost:8000](http://localhost:8000).
 Bodhi/
 ├── frontend/
 │   ├── public/
-│   │   └── images/gita/       # Gita artwork
+│   │   └── images/             # Gita artwork & gallery images
+│   ├── Gym/                    # Hevy app screenshots (source for gym session dates)
 │   └── src/
 │       ├── components/         # UI components
-│       ├── data/mock.js        # Content data
+│       ├── data/mock.js        # Content data (gym sessions, gallery, etc.)
 │       ├── hooks/
 │       └── lib/
 └── backend/
     ├── server.py               # FastAPI app
     └── models.py               # Pydantic models
 ```
+
+## Deployment
+
+Frontend is deployed on [Vercel](https://vercel.com). To deploy:
+
+```bash
+npm i -g vercel
+cd frontend
+vercel
+```
+
+The backend (FastAPI + MongoDB) is run separately and is not required for the static frontend to function.
 
 ## License
 
