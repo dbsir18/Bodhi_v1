@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Smartphone, Package, Wine, User, BookOpen, ExternalLink, Trophy } from 'lucide-react';
+import { Smartphone, Package, Wine, User, BookOpen, ExternalLink, Trophy, MapPin, Heart } from 'lucide-react';
 import { recommendations, gymSessions } from '../data/mock';
 import { ScrollArea } from './ui/scroll-area';
 import { Badge } from './ui/badge';
@@ -151,7 +151,7 @@ const GymCalendar = () => {
             {hoveredDay ? (
               <span className="text-[11px] text-gray-500 dark:text-gray-400">
                 {new Date(hoveredDay.date + 'T00:00:00').toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' })}
-                {hoveredDay.active && <span className="text-green-600 dark:text-green-400 font-medium"> — worked out</span>}
+                {hoveredDay.active && <span className="text-green-600 dark:text-green-400 font-medium"> · worked out</span>}
               </span>
             ) : (
               <span className="text-[11px] text-gray-400 dark:text-gray-600">Hover a day</span>
@@ -181,12 +181,86 @@ const RecommendationCard = ({ item }) => {
             </Badge>
           )}
         </div>
-        <p className="text-sm text-gray-500 dark:text-gray-400 line-clamp-2">{item.description}</p>
+        <p className="text-sm text-gray-500 dark:text-gray-400 line-clamp-2">
+          {item.description}
+          {item.link && (
+            <>
+              {' '}
+              <a
+                href={item.link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-amber-600 dark:text-amber-400 hover:underline font-medium"
+                onClick={(e) => e.stopPropagation()}
+              >
+                {item.link.text}
+              </a>
+            </>
+          )}
+        </p>
       </div>
       {item.url && item.url !== '#' && (
         <ExternalLink className="w-4 h-4 text-gray-300 dark:text-gray-600 group-hover:text-gray-500 dark:group-hover:text-gray-400 transition-colors shrink-0" />
       )}
     </Wrapper>
+  );
+};
+
+const CITY_THEMES = {
+  Delhi:     { gradient: 'from-rose-500 to-red-600',    text: 'text-rose-700 dark:text-rose-400',    bg: 'bg-rose-50 dark:bg-rose-950/20',    border: 'border-rose-200 dark:border-rose-800/40' },
+  Goa:       { gradient: 'from-emerald-400 to-teal-500', text: 'text-teal-700 dark:text-teal-400',    bg: 'bg-teal-50 dark:bg-teal-950/20',    border: 'border-teal-200 dark:border-teal-800/40' },
+  Bangalore: { gradient: 'from-violet-500 to-purple-600', text: 'text-violet-700 dark:text-violet-400', bg: 'bg-violet-50 dark:bg-violet-950/20', border: 'border-violet-200 dark:border-violet-800/40' },
+  Jaipur:    { gradient: 'from-amber-400 to-orange-500', text: 'text-amber-700 dark:text-amber-400',  bg: 'bg-amber-50 dark:bg-amber-950/20',  border: 'border-amber-200 dark:border-amber-800/40' },
+};
+
+const BarsContent = ({ bars }) => {
+  const grouped = useMemo(() => {
+    const cities = ['Delhi', 'Goa', 'Bangalore', 'Jaipur'];
+    return cities
+      .map(city => ({ city, items: bars.filter(b => b.city === city) }))
+      .filter(g => g.items.length > 0);
+  }, [bars]);
+
+  return (
+    <div className="space-y-7">
+      {grouped.map(({ city, items }) => {
+        const theme = CITY_THEMES[city] || CITY_THEMES.Delhi;
+        return (
+          <div key={city}>
+            <div className="flex items-center gap-2.5 mb-3 pb-2 border-b border-gray-100 dark:border-gray-700/40">
+              <MapPin className={`w-3.5 h-3.5 ${theme.text}`} strokeWidth={2.5} />
+              <h3 className={`text-xs font-semibold tracking-widest uppercase ${theme.text}`}>
+                {city}
+              </h3>
+              <span className="text-[10px] text-gray-400 dark:text-gray-500 font-normal normal-case ml-auto">
+                {items.length} {items.length === 1 ? 'spot' : 'spots'}
+              </span>
+            </div>
+            <div className="grid grid-cols-2 gap-x-6 gap-y-0.5">
+              {items.map((bar) => (
+                <a
+                  key={bar.id}
+                  href={bar.mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group flex items-center justify-between py-2.5 px-1 border-b border-gray-50 dark:border-gray-800/40 last:border-0 hover:bg-gray-50/80 dark:hover:bg-gray-800/30 rounded-md transition-colors duration-150"
+                >
+                  <div className="flex items-center gap-1.5 min-w-0">
+                    <span className="text-sm text-gray-800 dark:text-gray-200 truncate">
+                      {bar.name}
+                    </span>
+                    {bar.tag === 'FAV' && (
+                      <Heart className="w-3 h-3 text-rose-500 fill-rose-500 shrink-0" />
+                    )}
+                  </div>
+                  <MapPin className="w-3.5 h-3.5 text-gray-300 dark:text-gray-600 group-hover:text-gray-500 dark:group-hover:text-gray-400 transition-colors shrink-0 ml-2" />
+                </a>
+              ))}
+            </div>
+          </div>
+        );
+      })}
+    </div>
   );
 };
 
@@ -230,6 +304,8 @@ const RecommendationsContent = () => {
         <div className="p-6">
           {activeTab === 'wins' ? (
             <GymCalendar />
+          ) : activeTab === 'bars' && items.length > 0 ? (
+            <BarsContent bars={items} />
           ) : items.length > 0 ? (
             <div className="space-y-2">
               {items.map((item) => (
