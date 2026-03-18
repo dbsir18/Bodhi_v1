@@ -98,7 +98,7 @@ const GymCalendar = () => {
     <div className="p-5 rounded-2xl bg-white dark:bg-gray-800/80 border border-gray-100 dark:border-gray-700/50">
       <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-4">Gym</p>
 
-      <div className="overflow-x-auto">
+      <div className="overflow-x-auto" style={{ WebkitOverflowScrolling: 'touch' }}>
         <div className="inline-flex flex-col" style={{ minWidth: 'max-content' }}>
           {/* Month labels + grids side by side */}
           <div className="flex items-start gap-4">
@@ -345,32 +345,36 @@ const RecommendationsContent = () => {
         })}
       </div>
 
-      {/* Content */}
-      <ScrollArea className="flex-1">
-        <div className="p-4 md:p-6">
-          {activeTab === 'wins' ? (
-            <GymCalendar />
-          ) : activeTab === 'bars' && items.length > 0 ? (
-            <BarsContent bars={items} />
-          ) : items.length > 0 ? (
-            <div className="space-y-2">
-              {items.map((item) => (
-                <RecommendationCard key={item.id} item={item} />
-              ))}
-            </div>
-          ) : (
-            <div className="flex flex-col items-center justify-center h-[40vh] text-center">
-              <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${activeCat.color} flex items-center justify-center mb-4 shadow-lg`}>
-                <activeCat.icon className="w-7 h-7 text-white" />
-              </div>
-              <p className="text-gray-400 dark:text-gray-500 text-sm">
-                {activeCat.emptyText}
-              </p>
-              <p className="text-gray-300 dark:text-gray-600 text-xs mt-1">Coming soon</p>
-            </div>
-          )}
+      {/* Content — wins tab uses a plain div so inner overflow-x-auto can work on mobile */}
+      {activeTab === 'wins' ? (
+        <div className="flex-1 overflow-y-auto p-4 md:p-6">
+          <GymCalendar />
         </div>
-      </ScrollArea>
+      ) : (
+        <ScrollArea className="flex-1">
+          <div className="p-4 md:p-6">
+            {activeTab === 'bars' && items.length > 0 ? (
+              <BarsContent bars={items} />
+            ) : items.length > 0 ? (
+              <div className="space-y-2">
+                {items.map((item) => (
+                  <RecommendationCard key={item.id} item={item} />
+                ))}
+              </div>
+            ) : (
+              <div className="flex flex-col items-center justify-center h-[40vh] text-center">
+                <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${activeCat.color} flex items-center justify-center mb-4 shadow-lg`}>
+                  <activeCat.icon className="w-7 h-7 text-white" />
+                </div>
+                <p className="text-gray-400 dark:text-gray-500 text-sm">
+                  {activeCat.emptyText}
+                </p>
+                <p className="text-gray-300 dark:text-gray-600 text-xs mt-1">Coming soon</p>
+              </div>
+            )}
+          </div>
+        </ScrollArea>
+      )}
     </div>
   );
 };

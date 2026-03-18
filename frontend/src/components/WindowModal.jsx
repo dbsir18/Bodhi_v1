@@ -20,7 +20,7 @@ const WindowModal = ({ type, onClose, onNavigate, articleSlug, onArticleChange }
       case 'projects':
         return <ProjectsSection />;
       case 'events':
-        return <EventsSection />;
+        return <EventsSection articleSlug={articleSlug} onArticleChange={onArticleChange} />;
       case 'recommendations':
         return <RecommendationsContent />;
       case 'about':
