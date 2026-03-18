@@ -1,22 +1,5 @@
 // Mock data for Dhruv Bhargava portfolio
 
-export const gitaVerses = [
-  {
-    id: 1,
-    chapter: 2,
-    verse: 47,
-    sanskrit: "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन",
-    translation: "You have the right to perform your duty, but never to the fruits of your action.",
-  },
-  {
-    id: 2,
-    chapter: 3,
-    verse: 21,
-    sanskrit: "यद्यदाचरति श्रेष्ठस्तत्तदेवेतरो जनः",
-    translation: "Whatever a great person does, common people follow. Whatever standards they set, the world pursues.",
-  }
-];
-
 export const galleryPaintings = [
   {
     id: 1,
@@ -270,7 +253,7 @@ export const learnings = [
     id: 1,
     title: "The Chief of Staff Equation",
     date: "Feb 2026",
-    coverImage: "/images/covers/cos-types.png",
+    coverImage: "/images/covers/cos-equation.svg",
     category: "Work",
     excerpt: "Exposure vs. Evidence. The CoS seat gives you breadth without forcing depth, and without intentionally driving a spike, the breadth alone stops compounding.",
     content: `# The Chief of Staff Equation
@@ -575,21 +558,17 @@ export const socialLinks = [
 
 export const aboutInfo = {
   name: "Dhruv Bhargava",
-  title: "",
-  bio: "",
-  location: "India"
+  location: "DEL // BLR",
+  education: "BITS Pilani · Econ & Engg",
+  bio: "\"You can just do things.\"",
+  current: { role: "Technical GTM", company: "Sarvam", url: "https://www.sarvam.ai" },
+  previous: [
+    { company: "Composio", url: "https://composio.dev" },
+    { company: "Mira", url: "https://mira.network" },
+    { company: "Jungle Ventures", url: "https://www.jungle.vc" },
+    { company: "Beenext", url: "https://beenext.com" },
+  ],
+  fun: ["Gym", "Manchester United", "F1", "Travel"],
 };
 
-export const spotifyPlaylist = {
-  name: "Epic Scores",
-  creator: "Dhruv",
-  url: "https://open.spotify.com/playlist/0wQ3YRffuuOLY2gzGOHTiN",
-  embedUrl: "https://open.spotify.com/embed/playlist/0wQ3YRffuuOLY2gzGOHTiN?utm_source=generator&theme=0"
-};
-
-export const changelogEntries = [
-  { date: "Feb 19, 2025", entry: "Added Thoughts & Learnings" },
-  { date: "Feb 15, 2025", entry: "Redesigned dock with macOS icons" },
-  { date: "Feb 12, 2025", entry: "Updated portfolio design" },
-  { date: "Jan 28, 2025", entry: "Added new projects" }
-];
+// Changelog is now auto-generated at build time — see scripts/generate-changelog.js

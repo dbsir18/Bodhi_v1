@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, memo } from 'react';
 import { Sun, Moon, ChevronDown } from 'lucide-react';
 import {
   DropdownMenu,
@@ -6,9 +6,9 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from './ui/dropdown-menu';
-import { changelogEntries } from '../data/mock';
+import changelogEntries from '../data/changelog.json';
 
-const TopBar = ({ isDark, toggleTheme }) => {
+const Clock = memo(() => {
   const [currentTime, setCurrentTime] = useState(new Date());
 
   useEffect(() => {
@@ -22,33 +22,41 @@ const TopBar = ({ isDark, toggleTheme }) => {
   };
 
   const formatTime = (date) => {
-    return date.toLocaleTimeString('en-US', { 
-      hour: 'numeric', 
+    return date.toLocaleTimeString('en-US', {
+      hour: 'numeric',
       minute: '2-digit',
-      hour12: true 
+      hour12: true
     });
   };
 
   return (
-    <div className="fixed top-0 left-0 right-0 h-8 flex items-center justify-between px-4 z-50 bg-transparent">
-      <div className="text-sm font-semibold text-gray-800 dark:text-gray-200">
+    <div className="text-sm text-gray-600 dark:text-gray-300">
+      {formatDate(currentTime)} <span className="font-medium">{formatTime(currentTime)}</span>
+    </div>
+  );
+});
+
+const TopBar = ({ isDark, toggleTheme }) => {
+  return (
+    <div className="fixed top-0 left-0 right-0 h-8 flex items-center justify-between px-4 z-50 bg-white/10 dark:bg-black/10 backdrop-blur-md animate-fade-in">
+      <div className="text-xs md:text-sm font-semibold text-gray-800 dark:text-gray-200 truncate">
         Dhruv Bhargava
       </div>
-      
-      <div className="flex items-center gap-4">
-        <button 
+
+      <div className="flex items-center gap-2 md:gap-4">
+        <button
           onClick={toggleTheme}
           className="p-1 rounded hover:bg-black/5 dark:hover:bg-white/10 transition-colors"
         >
           {isDark ? (
-            <Sun className="w-4 h-4 text-gray-600 dark:text-gray-300" />
+            <Sun className="w-3.5 h-3.5 md:w-4 md:h-4 text-gray-600 dark:text-gray-300" />
           ) : (
-            <Moon className="w-4 h-4 text-gray-600 dark:text-gray-300" />
+            <Moon className="w-3.5 h-3.5 md:w-4 md:h-4 text-gray-600 dark:text-gray-300" />
           )}
         </button>
 
         <DropdownMenu>
-          <DropdownMenuTrigger className="flex items-center gap-1 text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors outline-none">
+          <DropdownMenuTrigger className="hidden md:flex items-center gap-1 text-sm text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white transition-colors outline-none">
             Changelog
             <ChevronDown className="w-3 h-3" />
           </DropdownMenuTrigger>
@@ -62,9 +70,7 @@ const TopBar = ({ isDark, toggleTheme }) => {
           </DropdownMenuContent>
         </DropdownMenu>
 
-        <div className="text-sm text-gray-600 dark:text-gray-300">
-          {formatDate(currentTime)} <span className="font-medium">{formatTime(currentTime)}</span>
-        </div>
+        <Clock />
       </div>
     </div>
   );

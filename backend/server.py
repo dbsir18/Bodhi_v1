@@ -54,8 +54,8 @@ async def get_thought(thought_id: str):
 
 @api_router.post("/thoughts", response_model=Thought)
 async def create_thought(thought: ThoughtCreate):
-    thought_obj = Thought(**thought.dict())
-    await db.thoughts.insert_one(thought_obj.dict())
+    thought_obj = Thought(**thought.model_dump())
+    await db.thoughts.insert_one(thought_obj.model_dump())
     return thought_obj
 
 
@@ -65,7 +65,7 @@ async def update_thought(thought_id: str, thought: ThoughtCreate):
     if not existing:
         raise HTTPException(status_code=404, detail="Thought not found")
     
-    update_data = thought.dict()
+    update_data = thought.model_dump()
     update_data["updated_at"] = datetime.utcnow()
     await db.thoughts.update_one({"id": thought_id}, {"$set": update_data})
     
@@ -90,8 +90,8 @@ async def get_learnings():
 
 @api_router.post("/learnings", response_model=Learning)
 async def create_learning(learning: LearningCreate):
-    learning_obj = Learning(**learning.dict())
-    await db.learnings.insert_one(learning_obj.dict())
+    learning_obj = Learning(**learning.model_dump())
+    await db.learnings.insert_one(learning_obj.model_dump())
     return learning_obj
 
 
@@ -101,7 +101,7 @@ async def update_learning(learning_id: str, learning: LearningCreate):
     if not existing:
         raise HTTPException(status_code=404, detail="Learning not found")
     
-    update_data = learning.dict()
+    update_data = learning.model_dump()
     update_data["updated_at"] = datetime.utcnow()
     await db.learnings.update_one({"id": learning_id}, {"$set": update_data})
     
@@ -126,8 +126,8 @@ async def get_projects():
 
 @api_router.post("/projects", response_model=Project)
 async def create_project(project: ProjectCreate):
-    project_obj = Project(**project.dict())
-    await db.projects.insert_one(project_obj.dict())
+    project_obj = Project(**project.model_dump())
+    await db.projects.insert_one(project_obj.model_dump())
     return project_obj
 
 
@@ -137,7 +137,7 @@ async def update_project(project_id: str, project: ProjectCreate):
     if not existing:
         raise HTTPException(status_code=404, detail="Project not found")
     
-    update_data = project.dict()
+    update_data = project.model_dump()
     update_data["updated_at"] = datetime.utcnow()
     await db.projects.update_one({"id": project_id}, {"$set": update_data})
     
@@ -162,8 +162,8 @@ async def get_events():
 
 @api_router.post("/events", response_model=Event)
 async def create_event(event: EventCreate):
-    event_obj = Event(**event.dict())
-    await db.events.insert_one(event_obj.dict())
+    event_obj = Event(**event.model_dump())
+    await db.events.insert_one(event_obj.model_dump())
     return event_obj
 
 
@@ -173,7 +173,7 @@ async def update_event(event_id: str, event: EventCreate):
     if not existing:
         raise HTTPException(status_code=404, detail="Event not found")
     
-    update_data = event.dict()
+    update_data = event.model_dump()
     update_data["updated_at"] = datetime.utcnow()
     await db.events.update_one({"id": event_id}, {"$set": update_data})
     
@@ -198,8 +198,8 @@ async def get_place_recommendations():
 
 @api_router.post("/recommendations/places", response_model=PlaceRecommendation)
 async def create_place_recommendation(place: PlaceRecommendationCreate):
-    place_obj = PlaceRecommendation(**place.dict())
-    await db.place_recommendations.insert_one(place_obj.dict())
+    place_obj = PlaceRecommendation(**place.model_dump())
+    await db.place_recommendations.insert_one(place_obj.model_dump())
     return place_obj
 
 
@@ -209,7 +209,7 @@ async def update_place_recommendation(place_id: str, place: PlaceRecommendationC
     if not existing:
         raise HTTPException(status_code=404, detail="Place not found")
     
-    update_data = place.dict()
+    update_data = place.model_dump()
     update_data["updated_at"] = datetime.utcnow()
     await db.place_recommendations.update_one({"id": place_id}, {"$set": update_data})
     
@@ -234,8 +234,8 @@ async def get_person_recommendations():
 
 @api_router.post("/recommendations/people", response_model=PersonRecommendation)
 async def create_person_recommendation(person: PersonRecommendationCreate):
-    person_obj = PersonRecommendation(**person.dict())
-    await db.person_recommendations.insert_one(person_obj.dict())
+    person_obj = PersonRecommendation(**person.model_dump())
+    await db.person_recommendations.insert_one(person_obj.model_dump())
     return person_obj
 
 
@@ -245,7 +245,7 @@ async def update_person_recommendation(person_id: str, person: PersonRecommendat
     if not existing:
         raise HTTPException(status_code=404, detail="Person not found")
     
-    update_data = person.dict()
+    update_data = person.model_dump()
     update_data["updated_at"] = datetime.utcnow()
     await db.person_recommendations.update_one({"id": person_id}, {"$set": update_data})
     
@@ -270,8 +270,8 @@ async def get_product_recommendations():
 
 @api_router.post("/recommendations/products", response_model=ProductRecommendation)
 async def create_product_recommendation(product: ProductRecommendationCreate):
-    product_obj = ProductRecommendation(**product.dict())
-    await db.product_recommendations.insert_one(product_obj.dict())
+    product_obj = ProductRecommendation(**product.model_dump())
+    await db.product_recommendations.insert_one(product_obj.model_dump())
     return product_obj
 
 
@@ -281,7 +281,7 @@ async def update_product_recommendation(product_id: str, product: ProductRecomme
     if not existing:
         raise HTTPException(status_code=404, detail="Product not found")
     
-    update_data = product.dict()
+    update_data = product.model_dump()
     update_data["updated_at"] = datetime.utcnow()
     await db.product_recommendations.update_one({"id": product_id}, {"$set": update_data})
     
@@ -310,8 +310,11 @@ app.include_router(api_router)
 app.add_middleware(
     CORSMiddleware,
     allow_credentials=True,
-    allow_origins=["*"],
-    allow_methods=["*"],
+    allow_origins=[
+        "https://bodhi-v1.vercel.app",
+        "http://localhost:3000",
+    ],
+    allow_methods=["GET", "POST", "PUT", "DELETE"],
     allow_headers=["*"],
 )
 

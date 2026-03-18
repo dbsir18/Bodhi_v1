@@ -71,7 +71,15 @@ const buildMonthBlocks = (sessionSet, today) => {
 
 const GymCalendar = () => {
   const [hoveredDay, setHoveredDay] = useState(null);
-  const isDark = document.documentElement.classList.contains('dark');
+  const [isDark, setIsDark] = useState(() => document.documentElement.classList.contains('dark'));
+
+  React.useEffect(() => {
+    const observer = new MutationObserver(() => {
+      setIsDark(document.documentElement.classList.contains('dark'));
+    });
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+    return () => observer.disconnect();
+  }, []);
 
   const emptyColor = isDark ? '#161b22' : '#ebedf0';
   const activeColor = isDark ? '#39d353' : '#26a641';

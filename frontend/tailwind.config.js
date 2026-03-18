@@ -56,25 +56,39 @@ module.exports = {
   		},
   		keyframes: {
   			'accordion-down': {
-  				from: {
-  					height: '0'
-  				},
-  				to: {
-  					height: 'var(--radix-accordion-content-height)'
-  				}
+  				from: { height: '0' },
+  				to: { height: 'var(--radix-accordion-content-height)' }
   			},
   			'accordion-up': {
-  				from: {
-  					height: 'var(--radix-accordion-content-height)'
-  				},
-  				to: {
-  					height: '0'
-  				}
+  				from: { height: 'var(--radix-accordion-content-height)' },
+  				to: { height: '0' }
+  			},
+  			'dock-bounce': {
+  				'0%, 100%': { transform: 'translateY(0)' },
+  				'30%': { transform: 'translateY(-8px)' },
+  				'50%': { transform: 'translateY(-4px)' },
+  				'70%': { transform: 'translateY(-2px)' }
+  			},
+  			'fade-in-up': {
+  				from: { opacity: '0', transform: 'translateY(12px)' },
+  				to: { opacity: '1', transform: 'translateY(0)' }
+  			},
+  			'fade-in-dock': {
+  				from: { opacity: '0', transform: 'translateX(-8px)' },
+  				to: { opacity: '1', transform: 'translateX(0)' }
+  			},
+  			'fade-in': {
+  				from: { opacity: '0' },
+  				to: { opacity: '1' }
   			}
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out'
+  			'accordion-up': 'accordion-up 0.2s ease-out',
+  			'dock-bounce': 'dock-bounce 0.5s ease-out',
+  			'fade-in-up': 'fade-in-up 0.6s ease-out both',
+  			'fade-in-dock': 'fade-in-dock 0.5s ease-out 0.3s both',
+  			'fade-in': 'fade-in 0.5s ease-out both'
   		}
   	}
   },
