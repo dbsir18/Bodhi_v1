@@ -244,7 +244,7 @@ const BarsContent = ({ bars }) => {
                 {items.length} {items.length === 1 ? 'spot' : 'spots'}
               </span>
             </div>
-            <div className="grid grid-cols-2 gap-x-6 gap-y-0.5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-0.5">
               {items.map((bar) => (
                 <a
                   key={bar.id}
@@ -278,9 +278,38 @@ const RecommendationsContent = () => {
   const items = recommendations[activeTab] || [];
 
   return (
-    <div className="h-full flex">
-      {/* Sidebar */}
-      <div className="w-56 border-r border-gray-200 dark:border-gray-700 bg-gray-50/50 dark:bg-gray-800/30 flex flex-col py-3">
+    <div className="h-full flex flex-col md:flex-row">
+
+      {/* Mobile: horizontal scrollable tab strip */}
+      <div className="md:hidden flex-none border-b border-gray-200 dark:border-gray-700 bg-gray-50/50 dark:bg-gray-800/30 relative">
+        {/* Right fade hint */}
+        <div className="pointer-events-none absolute right-0 top-0 bottom-0 w-10 bg-gradient-to-l from-gray-50/90 dark:from-gray-800/90 to-transparent z-10" />
+        <div className="overflow-x-auto scrollbar-none">
+        <div className="flex gap-1 p-2 min-w-max">
+          {categories.map((cat) => {
+            const Icon = cat.icon;
+            const isActive = activeTab === cat.key;
+            return (
+              <button
+                key={cat.key}
+                onClick={() => setActiveTab(cat.key)}
+                className={`flex items-center gap-1.5 px-3 py-2 rounded-lg text-xs font-medium transition-all duration-150 whitespace-nowrap ${
+                  isActive
+                    ? 'bg-white dark:bg-gray-700 shadow-sm text-gray-900 dark:text-white'
+                    : 'text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700/50'
+                }`}
+              >
+                <Icon className="w-3.5 h-3.5 shrink-0" />
+                {cat.label}
+              </button>
+            );
+          })}
+        </div>
+        </div>
+      </div>
+
+      {/* Desktop: vertical sidebar */}
+      <div className="hidden md:flex w-56 border-r border-gray-200 dark:border-gray-700 bg-gray-50/50 dark:bg-gray-800/30 flex-col py-3">
         {categories.map((cat) => {
           const Icon = cat.icon;
           const isActive = activeTab === cat.key;
@@ -309,7 +338,7 @@ const RecommendationsContent = () => {
 
       {/* Content */}
       <ScrollArea className="flex-1">
-        <div className="p-6">
+        <div className="p-4 md:p-6">
           {activeTab === 'wins' ? (
             <GymCalendar />
           ) : activeTab === 'bars' && items.length > 0 ? (
@@ -321,9 +350,9 @@ const RecommendationsContent = () => {
               ))}
             </div>
           ) : (
-            <div className="flex flex-col items-center justify-center h-[50vh] text-center">
-              <div className={`w-16 h-16 rounded-2xl bg-gradient-to-br ${activeCat.color} flex items-center justify-center mb-4 shadow-lg`}>
-                <activeCat.icon className="w-8 h-8 text-white" />
+            <div className="flex flex-col items-center justify-center h-[40vh] text-center">
+              <div className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${activeCat.color} flex items-center justify-center mb-4 shadow-lg`}>
+                <activeCat.icon className="w-7 h-7 text-white" />
               </div>
               <p className="text-gray-400 dark:text-gray-500 text-sm">
                 {activeCat.emptyText}
