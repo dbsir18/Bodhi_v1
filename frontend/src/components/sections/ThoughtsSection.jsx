@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 import { Search, BookOpen, ArrowLeft } from 'lucide-react';
 import { thoughts as rawThoughts } from '../../data/mock';
 import { ScrollArea } from '../ui/scroll-area';
+import { slugify } from '../../App';
 
 const thoughts = [...rawThoughts].reverse();
 
@@ -21,8 +22,28 @@ const proseClasses = `prose dark:prose-invert max-w-none
   prose-code:text-amber-700 dark:prose-code:text-amber-300 prose-code:bg-amber-50 dark:prose-code:bg-amber-950/30 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm
   prose-a:text-amber-700 dark:prose-a:text-amber-400 prose-a:underline-offset-2 prose-a:decoration-amber-300 dark:prose-a:decoration-amber-700`;
 
-const ThoughtsSection = () => {
+const ThoughtsSection = ({ articleSlug, onArticleChange }) => {
   const [selectedThought, setSelectedThought] = useState(null);
+
+  // Sync with URL slug
+  useEffect(() => {
+    if (articleSlug) {
+      const found = thoughts.find(t => slugify(t.title) === articleSlug);
+      if (found) setSelectedThought(found);
+    } else {
+      setSelectedThought(null);
+    }
+  }, [articleSlug]);
+
+  const selectThought = (thought) => {
+    setSelectedThought(thought);
+    onArticleChange?.(slugify(thought.title));
+  };
+
+  const clearSelection = () => {
+    setSelectedThought(null);
+    onArticleChange?.(null);
+  };
 
   if (thoughts.length === 0) {
     return (
@@ -50,6 +71,9 @@ const ThoughtsSection = () => {
     </div>
   );
 
+  const stripLeadingTitle = (content) =>
+    content?.replace(/^#[^\n]*\n+/, '') ?? content;
+
   const renderArticle = (thought) => (
     <>
       {thought.coverImage ? renderCoverImage(thought) : (
@@ -60,7 +84,9 @@ const ThoughtsSection = () => {
       )}
       <div className={`px-6 md:px-8 py-6 ${proseClasses}`}>
         <ReactMarkdown remarkPlugins={[remarkGfm]}>
-          {thought.content || thought.excerpt}
+          {thought.coverImage
+            ? stripLeadingTitle(thought.content || thought.excerpt)
+            : (thought.content || thought.excerpt)}
         </ReactMarkdown>
       </div>
     </>
@@ -72,7 +98,7 @@ const ThoughtsSection = () => {
       return (
         <div className="flex flex-col h-full bg-white dark:bg-stone-900/60">
           <div className="flex items-center gap-2 px-4 py-3 border-b border-stone-200/80 dark:border-stone-700/60 shrink-0">
-            <button onClick={() => setSelectedThought(null)} className="p-1 -ml-1 rounded-lg hover:bg-stone-100 dark:hover:bg-stone-800">
+            <button onClick={clearSelection} className="p-1 -ml-1 rounded-lg hover:bg-stone-100 dark:hover:bg-stone-800">
               <ArrowLeft className="w-5 h-5 text-stone-600 dark:text-stone-400" />
             </button>
             <span className="text-sm font-medium text-stone-700 dark:text-stone-300 truncate">{selectedThought.title}</span>
@@ -90,7 +116,7 @@ const ThoughtsSection = () => {
           {thoughts.map((thought) => (
             <div
               key={thought.id}
-              onClick={() => setSelectedThought(thought)}
+              onClick={() => selectThought(thought)}
               className="rounded-xl overflow-hidden cursor-pointer bg-stone-50 dark:bg-stone-800/60 shadow-sm hover:shadow-md transition-shadow"
             >
               {thought.coverImage && (
@@ -127,7 +153,7 @@ const ThoughtsSection = () => {
             {thoughts.map((thought) => (
               <div
                 key={thought.id}
-                onClick={() => setSelectedThought(thought)}
+                onClick={() => selectThought(thought)}
                 className={`p-3 rounded-xl cursor-pointer mb-1 transition-all duration-150 ${
                   selectedThought?.id === thought.id
                     ? 'bg-amber-100/80 dark:bg-amber-900/25 shadow-sm'

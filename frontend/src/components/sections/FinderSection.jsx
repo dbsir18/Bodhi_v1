@@ -1,10 +1,10 @@
 import React from 'react';
 import { ThoughtsIcon, LearningsIcon, ProjectsIcon, EventsIcon, RecommendationsIcon } from '../Dock';
 
-const FinderSection = () => (
+const FinderSection = ({ onNavigate }) => (
   <div className="p-6">
     <h2 className="text-xl font-semibold mb-4 text-gray-800 dark:text-gray-100">Finder</h2>
-    <div className="grid grid-cols-4 gap-4">
+    <div className="grid grid-cols-3 md:grid-cols-4 gap-4">
       {[
         { name: 'Thoughts', icon: <ThoughtsIcon />, section: 'thoughts' },
         { name: 'Learnings', icon: <LearningsIcon />, section: 'learnings' },
@@ -14,6 +14,7 @@ const FinderSection = () => (
       ].map((item) => (
         <div
           key={item.name}
+          onClick={() => onNavigate?.(item.section)}
           className="flex flex-col items-center gap-2 p-4 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700/50 cursor-pointer transition-colors"
         >
           <div className="w-14 h-14 flex items-center justify-center">

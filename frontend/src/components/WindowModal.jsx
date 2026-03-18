@@ -8,15 +8,15 @@ import RecommendationsContent from './RecommendationsContent';
 import AboutSection from './sections/AboutSection';
 import FinderSection from './sections/FinderSection';
 
-const WindowModal = ({ type, onClose }) => {
+const WindowModal = ({ type, onClose, onNavigate, articleSlug, onArticleChange }) => {
   const [isMaximized, setIsMaximized] = useState(false);
 
   const renderContent = () => {
     switch (type) {
       case 'thoughts':
-        return <ThoughtsSection />;
+        return <ThoughtsSection articleSlug={articleSlug} onArticleChange={onArticleChange} />;
       case 'learnings':
-        return <LearningsSection />;
+        return <LearningsSection articleSlug={articleSlug} onArticleChange={onArticleChange} />;
       case 'projects':
         return <ProjectsSection />;
       case 'events':
@@ -26,7 +26,7 @@ const WindowModal = ({ type, onClose }) => {
       case 'about':
         return <AboutSection />;
       case 'finder':
-        return <FinderSection />;
+        return <FinderSection onNavigate={onNavigate} />;
       default:
         return null;
     }

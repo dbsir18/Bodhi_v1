@@ -60,13 +60,14 @@ const buildMonthBlocks = (sessionSet, today) => {
       while (last.length < 7) last.push(null);
     }
 
-    blocks.push({ label: MONTHS[month], weeks });
+    blocks.push({ label: MONTHS[month], year, weeks });
 
     month++;
     if (month > 11) { month = 0; year++; }
   }
 
-  return blocks;
+  // Reverse: most recent month first (leftmost)
+  return blocks.reverse();
 };
 
 const GymCalendar = () => {
@@ -110,48 +111,54 @@ const GymCalendar = () => {
               ))}
             </div>
 
-            {/* One block per month */}
-            {blocks.map((block) => (
-              <div key={block.label} className="flex flex-col">
-                {/* Month label */}
-                <span className="text-[10px] text-gray-400 dark:text-gray-500 mb-1 h-[14px] leading-[14px]">
-                  {block.label}
-                </span>
+            {/* One block per month (most recent first) */}
+            {blocks.map((block, bi) => {
+              // Show year label when the year changes between adjacent blocks
+              const prevBlock = bi > 0 ? blocks[bi - 1] : null;
+              const showYear = !prevBlock || prevBlock.year !== block.year;
 
-                {/* Columns */}
-                <div className="flex" style={{ gap: GAP }}>
-                  {block.weeks.map((col, wi) => (
-                    <div key={wi} className="flex flex-col" style={{ gap: GAP }}>
-                      {col.map((day, di) => {
-                        if (!day) {
+              return (
+                <div key={`${block.year}-${block.label}`} className="flex flex-col">
+                  {/* Month + year label */}
+                  <span className="text-[10px] text-gray-400 dark:text-gray-500 mb-1 h-[14px] leading-[14px]">
+                    {block.label}{showYear ? ` '${String(block.year).slice(2)}` : ''}
+                  </span>
+
+                  {/* Columns */}
+                  <div className="flex" style={{ gap: GAP }}>
+                    {block.weeks.map((col, wi) => (
+                      <div key={wi} className="flex flex-col" style={{ gap: GAP }}>
+                        {col.map((day, di) => {
+                          if (!day) {
+                            return (
+                              <div
+                                key={`pad-${wi}-${di}`}
+                                style={{ width: CELL, height: CELL, backgroundColor: 'transparent' }}
+                              />
+                            );
+                          }
                           return (
                             <div
-                              key={`pad-${wi}-${di}`}
-                              style={{ width: CELL, height: CELL, backgroundColor: 'transparent' }}
+                              key={day.date}
+                              style={{
+                                width: CELL,
+                                height: CELL,
+                                borderRadius: 2,
+                                backgroundColor: day.active ? activeColor : emptyColor,
+                                outline: day.isToday ? '1px solid #888' : 'none',
+                                outlineOffset: 1,
+                              }}
+                              onMouseEnter={() => setHoveredDay(day)}
+                              onMouseLeave={() => setHoveredDay(null)}
                             />
                           );
-                        }
-                        return (
-                          <div
-                            key={day.date}
-                            style={{
-                              width: CELL,
-                              height: CELL,
-                              borderRadius: 2,
-                              backgroundColor: day.active ? activeColor : emptyColor,
-                              outline: day.isToday ? '1px solid #888' : 'none',
-                              outlineOffset: 1,
-                            }}
-                            onMouseEnter={() => setHoveredDay(day)}
-                            onMouseLeave={() => setHoveredDay(null)}
-                          />
-                        );
-                      })}
-                    </div>
-                  ))}
+                        })}
+                      </div>
+                    ))}
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
 
           {/* Hover info */}
@@ -167,6 +174,8 @@ const GymCalendar = () => {
           </div>
         </div>
       </div>
+      {/* Scroll hint for mobile */}
+      <p className="text-[10px] text-gray-400 dark:text-gray-600 mt-2 md:hidden">← scroll for older months</p>
     </div>
   );
 };
