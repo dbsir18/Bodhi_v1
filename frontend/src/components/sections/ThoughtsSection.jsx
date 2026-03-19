@@ -63,10 +63,10 @@ const ThoughtsSection = ({ articleSlug, onArticleChange }) => {
         alt={item.title}
         className="w-full max-h-[40vh] object-contain"
       />
-      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-black/30 to-transparent" />
-      <div className="absolute bottom-4 left-8 right-8">
-        <h2 className="text-2xl font-bold text-white tracking-tight drop-shadow-sm">{item.title}</h2>
-        <p className="text-white/60 text-sm mt-1.5 font-light">{item.date}</p>
+      <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-black/75 via-black/40 to-transparent" />
+      <div className="absolute bottom-5 left-8 right-8">
+        <h2 className="text-2xl font-bold text-white tracking-tight" style={{ textShadow: '0 1px 8px rgba(0,0,0,0.6)' }}>{item.title}</h2>
+        <p className="text-white/70 text-sm mt-1.5 font-light">{item.date}</p>
       </div>
     </div>
   );
@@ -137,8 +137,9 @@ const ThoughtsSection = ({ articleSlug, onArticleChange }) => {
   // Desktop: existing two-pane layout
   const renderDesktop = () => (
     <div className="flex h-full">
-      <div className="w-72 border-r border-stone-200/80 dark:border-stone-700/60 bg-stone-50/80 dark:bg-stone-900/40 flex flex-col">
-        <div className="p-3 border-b border-stone-200/80 dark:border-stone-700/60">
+      {/* Sidebar */}
+      <div className="w-72 border-r border-stone-200 dark:border-stone-700/60 bg-[#f7f5f2] dark:bg-stone-900/40 flex flex-col">
+        <div className="p-3 border-b border-stone-200 dark:border-stone-700/60">
           <div className="relative">
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-stone-400" />
             <input
@@ -149,34 +150,55 @@ const ThoughtsSection = ({ articleSlug, onArticleChange }) => {
           </div>
         </div>
         <ScrollArea className="flex-1">
-          <div className="p-2">
-            {thoughts.map((thought) => (
-              <div
-                key={thought.id}
-                onClick={() => selectThought(thought)}
-                className={`p-3 rounded-xl cursor-pointer mb-1 transition-all duration-150 ${
-                  selectedThought?.id === thought.id
-                    ? 'bg-amber-100/80 dark:bg-amber-900/25 shadow-sm'
-                    : 'hover:bg-stone-100 dark:hover:bg-stone-800/60'
-                }`}
-              >
-                <h4 className="font-medium text-sm text-stone-800 dark:text-stone-200 line-clamp-1">{thought.title}</h4>
-                <p className="text-xs text-stone-500 dark:text-stone-400 mt-1">{thought.date}</p>
-                <p className="text-xs text-stone-400 dark:text-stone-500 mt-1 line-clamp-2 leading-relaxed">{thought.excerpt}</p>
-              </div>
-            ))}
+          <div className="p-2 pt-3">
+            {thoughts.map((thought) => {
+              const isActive = selectedThought?.id === thought.id;
+              return (
+                <div
+                  key={thought.id}
+                  onClick={() => selectThought(thought)}
+                  className={`rounded-xl cursor-pointer mb-1.5 overflow-hidden transition-all duration-150 ${
+                    isActive
+                      ? 'bg-white dark:bg-stone-800 shadow-md ring-1 ring-amber-200 dark:ring-amber-800/40'
+                      : 'hover:bg-white/70 dark:hover:bg-stone-800/60 hover:shadow-sm'
+                  }`}
+                >
+                  {/* Thumbnail if cover exists */}
+                  {thought.coverImage && (
+                    <div className="h-24 overflow-hidden">
+                      <img src={thought.coverImage} alt="" className="w-full h-full object-cover" />
+                    </div>
+                  )}
+                  <div className="p-3">
+                    <div className="flex items-center justify-between mb-1">
+                      <span className="text-xs text-stone-400">{thought.date}</span>
+                    </div>
+                    <h4 className={`font-medium text-sm line-clamp-2 ${isActive ? 'text-stone-900 dark:text-stone-100' : 'text-stone-700 dark:text-stone-300'}`}>{thought.title}</h4>
+                    {!thought.coverImage && (
+                      <p className="text-xs text-stone-400 dark:text-stone-500 mt-1 line-clamp-2 leading-relaxed">{thought.excerpt}</p>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
           </div>
         </ScrollArea>
       </div>
+      {/* Reading pane */}
       <div className="flex-1 flex flex-col bg-white dark:bg-stone-900/60">
         {selectedThought ? (
           <ScrollArea className="flex-1">
             {renderArticle(selectedThought)}
           </ScrollArea>
         ) : (
-          <div className="flex-1 flex flex-col items-center justify-center text-stone-400 dark:text-stone-500 gap-3">
-            <BookOpen className="w-10 h-10 text-stone-300 dark:text-stone-600" strokeWidth={1.5} />
-            <p className="text-sm font-light">Select a thought to read</p>
+          <div className="flex-1 flex flex-col items-center justify-center gap-4">
+            <div className="w-16 h-16 rounded-2xl bg-stone-100 dark:bg-stone-800 flex items-center justify-center">
+              <BookOpen className="w-8 h-8 text-stone-400 dark:text-stone-500" strokeWidth={1.5} />
+            </div>
+            <div className="text-center">
+              <p className="text-sm font-medium text-stone-600 dark:text-stone-400">Pick something to read</p>
+              <p className="text-xs text-stone-400 dark:text-stone-500 mt-1">Select a thought from the left</p>
+            </div>
           </div>
         )}
       </div>
