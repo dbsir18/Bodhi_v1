@@ -4,6 +4,7 @@ import TopBar from './components/TopBar';
 import Dock from './components/Dock';
 import WindowModal from './components/WindowModal';
 import ArtGallery from './components/ArtGallery';
+import { Analytics } from '@vercel/analytics/react';
 
 const slugify = (text) =>
   text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -120,6 +121,9 @@ function App() {
           onArticleChange={handleArticleChange}
         />
       )}
+
+      {/* Vercel Analytics */}
+      <Analytics />
     </div>
   );
 }
