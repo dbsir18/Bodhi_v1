@@ -547,6 +547,9 @@ export const gymSessions = [
   { date: "2026-03-13" },
   { date: "2026-03-14" },
   { date: "2026-03-15" },
+  { date: "2026-03-18" },
+  { date: "2026-03-19" },
+  { date: "2026-03-20" },
 ];
 
 export const socialLinks = [
