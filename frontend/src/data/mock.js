@@ -349,7 +349,7 @@ export const projects = [
     id: 1,
     title: "Bodhi",
     description: "Personal digital workspace: macOS-inspired UI with rotating Indian artwork, dock navigation, and a gym heatmap.",
-    url: "https://bodhi-v1.vercel.app",
+    url: "https://github.com/dbsir18/Bodhi",
     tags: ["React", "Tailwind", "FastAPI"],
   },
 ];
@@ -563,6 +563,9 @@ export const gymSessions = [
   { date: "2026-04-10" },
   { date: "2026-04-12" },
   { date: "2026-04-13" },
+  { date: "2026-04-14" },
+  { date: "2026-04-16" },
+  { date: "2026-04-18" },
 ];
 
 export const socialLinks = [
