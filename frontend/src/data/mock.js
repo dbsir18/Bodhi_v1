@@ -361,7 +361,6 @@ export const recommendations = {
     { id: 'hevy', name: 'Hevy', description: 'Elite workout tracker', url: 'https://hevy.com', tag: 'Fitness', link: { text: 'Follow me!', url: 'https://hevy.com/user/dbsir' } },
     { id: 'flighty', name: 'Flighty', description: 'For a yearly travel passport :)', url: 'https://www.flightyapp.com', tag: 'Travel' },
   ],
-  products: [],
   bars: [
     // Delhi
     { id: 'sidecar', name: 'Sidecar', city: 'Delhi', mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Sidecar+Bar+Delhi' },
@@ -393,7 +392,6 @@ export const recommendations = {
     // Jaipur
     { id: 'native', name: 'Native Cocktail Room', city: 'Jaipur', mapsUrl: 'https://www.google.com/maps/search/?api=1&query=Native+Cocktail+Room+Jaipur' },
   ],
-  people: [],
   content: []
 };
 
@@ -566,6 +564,9 @@ export const gymSessions = [
   { date: "2026-04-14" },
   { date: "2026-04-16" },
   { date: "2026-04-18" },
+  { date: "2026-04-23" },
+  { date: "2026-04-25" },
+  { date: "2026-04-26" },
 ];
 
 export const socialLinks = [

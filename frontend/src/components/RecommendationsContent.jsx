@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Smartphone, Package, Wine, User, BookOpen, ExternalLink, Trophy, MapPin, Heart } from 'lucide-react';
+import { Smartphone, Wine, BookOpen, ExternalLink, Trophy, MapPin, Heart } from 'lucide-react';
 import { recommendations, gymSessions } from '../data/mock';
 import { ScrollArea } from './ui/scroll-area';
 import { Badge } from './ui/badge';
@@ -7,9 +7,7 @@ import { Badge } from './ui/badge';
 const categories = [
   { key: 'wins', label: 'Wins', icon: Trophy, color: 'from-orange-500 to-red-600', emptyText: 'Wins & streaks' },
   { key: 'apps', label: 'Apps', icon: Smartphone, color: 'from-violet-500 to-purple-600', emptyText: 'Apps & tools I swear by' },
-  { key: 'products', label: 'Products', icon: Package, color: 'from-amber-500 to-orange-600', emptyText: 'Products I use daily' },
   { key: 'bars', label: 'Bars & Places', icon: Wine, color: 'from-rose-500 to-pink-600', emptyText: 'Bars & places worth visiting' },
-  { key: 'people', label: 'People', icon: User, color: 'from-blue-500 to-cyan-600', emptyText: 'People I recommend' },
   { key: 'content', label: 'Content', icon: BookOpen, color: 'from-emerald-500 to-teal-600', emptyText: 'Content worth your time' },
 ];
 
