@@ -250,6 +250,112 @@ Premiumization is a bet on stable demand. When the demand curve bends (even gent
 
 export const learnings = [
   {
+    id: 2,
+    title: "After the Rank",
+    date: "Jun 2026",
+    coverImage: "/images/covers/after-the-rank.png",
+    category: "College",
+    excerpt: "Five years of the same questions from BITS juniors. Branch anxiety, figuring out what you want, where to put your time. This is one version of the answers — incomplete by definition.",
+    content: `# After the Rank
+
+Every year a few people reach out. Before choice filling, after results, somewhere in the middle of first semester. Five years of this now and the questions are basically the same each time, so I figured I'd just write it down.
+
+One thing upfront: this isn't the playbook. Some of my batchmates went all in on GPA and are doing great. Others did the core engineering track properly. I did something different, it worked for me, and I've watched a version of it work for a few others. There are multiple ways to do BITS well. This is just one of them.
+
+---
+
+**First few months: stop trying to optimise**
+
+You just got through JEE or whatever version of hell got you here. Default mode is: what do I need to do to stay ahead. Understandable, that mode served you. But BITS isn't calibrated the same way as everything you've been through, and if you walk in day one trying to reverse engineer the next four years you'll almost certainly optimise for the wrong things.
+
+What actually matters in semester one is finding your people. Everything else builds on top of that.
+
+It happens a few ways. Your roommate, your wingies, whoever you end up eating with at the mess by default - these feel random but they're not nothing, proximity builds real trust over time. Then there's people from your region or school, which is a natural comfort zone, fine as a starting point. But the real one is clubs. Quark, APOGEE, the consulting cells, the finance clubs, the entrepreneurship ones - wherever you end up in a room where you're clearly not the most impressive person, that's where you want to stay.
+
+You don't need to have it figured out by end of semester one. You just need to find people who'll be honest with you. The rest takes care of itself.
+
+---
+
+**The branch thing**
+
+I get some version of this every year, usually more than once.
+
+First version: I've joined XYZ, is this going to close doors for me. Usually from someone who just got their allocation and is already convinced they've lost.
+
+My context: I was MSc Economics as my primary, took Chemical Engineering as my dual. Not because I loved Chemical - I wasn't getting CS for my dual, and I also genuinely didn't see myself coding at the time, which is pretty funny to say now. Electronics was the other option but heavier to manage alongside an MSc, and for the paths I was thinking about (product, venture capital) your dual degree doesn't really change which doors are open to you. So I took Chemical, kept the academic load manageable, spent the time I saved building other things.
+
+The honest answer on branch: for most of the paths people actually end up on, it matters way less than the anxiety around it suggests. CS is the real exception, it gives you a genuine edge if you're going into software. Electrical matters if you want core semiconductor/chip roles and given what's happening in that space right now, that's a path worth taking seriously. But outside those two, branch is mostly background detail.
+
+Worth knowing: Electronics still lets you sit for most CS companies. It adds workload. The door isn't closed.
+
+Second version of this call: I took MSc Econ/Maths/Bio hoping to get CS as my dual, I didn't get it, Electronics feels too heavy to manage alongside, everything else feels like settling.
+
+How I'd think about it: if you know what you want to do, pick the branch that gives you the best shot at it. If you don't know yet, which is most people honestly, optimise for having bandwidth. Pick the thing that doesn't consume you so you actually have room to figure out what you want. That's a more useful optimisation at 18 than trying to guess the ideal branch for a career you haven't had yet.
+
+Branch is the starting point. Where you end up is a different question. I talked to probably ten people before making my own call. Half said don't risk it, play it safe. Half said branch doesn't matter, do what you want. Both had a point, and neither was fully right. One of my closest friends graduated as a mechanical engineer and is now one of the better frontend engineers I know. Ambition doesn't stop moving because the starting conditions weren't ideal.
+
+---
+
+**Figuring out what you want to do**
+
+The call I get most often, actually: bhaiya how did you figure out what you wanted to do.
+
+Still figuring it out, honestly. But the thing that helped me was simple in hindsight - I just started trying things early enough that I had room to be wrong.
+
+First midsem season, I watched friends study weeks ahead and score roughly what I scored cramming the night before. That told me something. Not that I was smart - obviously the opposite, there were people at BITS who were just built differently academically. It told me that even if I maxed out on the study side I'd land in the solid middle, not at the top. And once I knew that, it was almost freeing. Okay, so where do I actually want to put my time?
+
+That thinking is what landed me at a VC fund at the end of first year. Went in not fully knowing what I was walking into. The feedback I got was simple: you seem to have some feel for this, but go get your hands dirty first. Work at startups, build things, come back with some actual scars. It pointed me somewhere, and that was enough.
+
+The thing I'd say to everyone regardless of path: BITS gives you four or five years where the cost of being wrong is genuinely low. Use that window. The people I've watched really struggle after graduation are almost always the ones who arrived at placements having never tested whether they actually liked what they were walking into. They followed the default track, got a decent-looking offer, and spent the next two years realising they wanted to do something completely different.
+
+On stipend specifically: so many people optimise hard for compensation straight out of college. Most of us are at similar numbers now, give or take 20%. The trajectories look nothing alike. Pay at 21 is one of the least useful signals you have. The weird internship that taught you something real almost always mattered more than the one that just paid well.
+
+**The paths, roughly**
+
+**Software.** Branch matters less than you'd think, but it's not nothing. CS gives you a genuine structural advantage, especially with how competitive the market has gotten. What actually matters is having things you've built, code that works, proof you can ship. Do internships early. Build products. Contribute to projects that have users. Good recruiters at good software companies care far more about your portfolio than your department name.
+
+**Core (Electrical especially).** Genuinely exciting right now. Chips matter, the companies building them are paying well, and if the work interests you it's a strong path. Chemical and Mechanical are more interest-driven. If you like the subject go deep, GPA matters, lean on on-campus placements. The system works if you work it.
+
+**Product, GTM, Founder's Office.** These roles live off-campus. The most compelling person gets the offer, not the most academically polished one. You need projects, internships, a story about why you. The question a good recruiter is actually asking: what gap have you built between yourself and the average person from your batch. Your portfolio answers that better than your GPA does.
+
+**Consulting.** GPA matters more here than most tracks. Leadership positions matter. Stack structured internships. The firms recruiting on campus have a clear checklist. Work through it deliberately.
+
+**Finance.** On-campus is the primary channel. Actually know your stuff. Depth of understanding matters more than any credential, though CFA Level 1 prep is a useful differentiator. If you're serious about finance, treat your coursework like job training, because in this case it is.
+
+Cold emails work. So do referrals through seniors, and internships at companies nobody on campus has heard of. Go wide, especially early. At this stage you're trying to figure out what you actually like, not build a brand. That's the more useful thing to optimise for.
+
+---
+
+**Masters and MBA**
+
+Masters abroad comes up a lot. Legitimate path, I'm not dismissing it. I still think about it sometimes, the grass is genuinely greener on the other side in ways that are hard to reason your way out of. My roommate spent a long time going back and forth on it, eventually decided to go for it, and is currently interning at NVIDIA. Hard not to be proud of that. But his path took the deliberation it took. The going back and forth was part of how he got to a clear yes. Before committing: what's the actual ROI, and what experience are you buying. If those hold up, go for it. If it's mainly about the brand on the degree, worth thinking harder about.
+
+MBA is a completely different calculation. In India, early is generally better - IIM and ISB pipelines reward youth and a clean academic record. Abroad is a much longer game, four to five years of serious work experience minimum, competitive, expensive, and it takes you off the market for two years. Worth it for the right person at the right time. Just go in knowing what you're signing up for.
+
+---
+
+**Stuff that's actually true**
+
+Nobody in first year has it sorted. The people who look like they do are mostly just better at hiding the anxiety.
+
+Comparison is going to be everywhere and it will mess with you if you let it. Your batchmate landing a great internship doesn't cost you anything. The person who gets the Stanford admit didn't take your spot. At 21 the gaps feel massive. A few years in, they rarely are. Most people from BITS figure it out, across very different paths. The place sets a floor. Most people build on it.
+
+Talk to seniors and alumni. Most of them respond. The message you feel too embarrassed to send is usually the one that would've helped the most. Send it, be specific about what you need.
+
+Don't chase prestige for its own sake. Things that look impressive and aren't compounding are a bad deal, and you usually can't tell from the outside which is which.
+
+Make a plan. It won't work out. Make it anyway - it gives you enough direction to take the next step, and the one after that. Somewhere down the line you'll realise the plan was wrong but the direction was roughly right.
+
+You'll figure it out. Pretty much everyone does.
+
+---
+
+This is my version of it. Incomplete by definition. Yours will look different. But the questions are the same, and most of the answers are closer than they feel from the beginning of first year.
+
+Best,
+2019B3A10092G`,
+  },
+  {
     id: 1,
     title: "The Chief of Staff Equation",
     date: "Feb 2026",
@@ -608,6 +714,7 @@ export const gymSessions = [
   { date: "2026-06-29" },
   // July 2026
   { date: "2026-07-02" },
+  { date: "2026-07-03" },
 ];
 
 export const socialLinks = [
