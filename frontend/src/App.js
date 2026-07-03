@@ -20,7 +20,7 @@ const parseUrl = () => {
 };
 
 function App() {
-  const [isDark, setIsDark] = useState(false);
+  const [isDark, setIsDark] = useState(true);
   const [activeSection, setActiveSection] = useState(null);
   const [articleSlug, setArticleSlug] = useState(null);
 
@@ -83,7 +83,7 @@ function App() {
 
   useEffect(() => {
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    setIsDark(prefersDark);
+    if (prefersDark) setIsDark(true);
   }, []);
 
   useEffect(() => {

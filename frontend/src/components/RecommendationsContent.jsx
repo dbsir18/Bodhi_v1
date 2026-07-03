@@ -242,7 +242,7 @@ const BarsContent = ({ bars }) => {
         const theme = CITY_THEMES[city] || CITY_THEMES.Delhi;
         return (
           <div key={city}>
-            <div className="flex items-center gap-2.5 mb-3 pb-2 border-b border-gray-100 dark:border-gray-700/40">
+            <div className="flex items-center gap-2.5 mb-3 pb-2 border-b border-gray-200 dark:border-gray-700/40">
               <MapPin className={`w-3.5 h-3.5 ${theme.text}`} strokeWidth={2.5} />
               <h3 className={`text-xs font-semibold tracking-widest uppercase ${theme.text}`}>
                 {city}
@@ -258,7 +258,7 @@ const BarsContent = ({ bars }) => {
                   href={bar.mapsUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center justify-between py-2.5 px-1 border-b border-gray-50 dark:border-gray-800/40 last:border-0 hover:bg-gray-50/80 dark:hover:bg-gray-800/30 rounded-md transition-colors duration-150"
+                  className="group flex items-center justify-between py-2.5 px-1 border-b border-gray-100 dark:border-gray-800/40 last:border-0 hover:bg-gray-100/70 dark:hover:bg-gray-800/30 rounded-md transition-colors duration-150"
                 >
                   <div className="flex items-center gap-1.5 min-w-0">
                     <span className="text-sm text-gray-800 dark:text-gray-200 truncate">
@@ -268,7 +268,7 @@ const BarsContent = ({ bars }) => {
                       <Heart className="w-3 h-3 text-rose-500 fill-rose-500 shrink-0" />
                     )}
                   </div>
-                  <MapPin className="w-3.5 h-3.5 text-gray-300 dark:text-gray-600 group-hover:text-gray-500 dark:group-hover:text-gray-400 transition-colors shrink-0 ml-2" />
+                  <MapPin className="w-3.5 h-3.5 text-gray-400 dark:text-gray-600 group-hover:text-gray-500 dark:group-hover:text-gray-400 transition-colors shrink-0 ml-2" />
                 </a>
               ))}
             </div>
@@ -316,7 +316,7 @@ const RecommendationsContent = () => {
       </div>
 
       {/* Desktop: vertical sidebar */}
-      <div className="hidden md:flex w-56 border-r border-gray-200 dark:border-gray-700 bg-gray-50/50 dark:bg-gray-800/30 flex-col py-3">
+      <div className="hidden md:flex w-56 border-r border-gray-300 dark:border-gray-700 bg-gray-100/60 dark:bg-gray-800/30 flex-col py-3">
         {categories.map((cat) => {
           const Icon = cat.icon;
           const isActive = activeTab === cat.key;
