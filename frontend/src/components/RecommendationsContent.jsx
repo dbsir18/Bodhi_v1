@@ -80,8 +80,8 @@ const GymCalendar = () => {
     return () => observer.disconnect();
   }, []);
 
-  const emptyColor = isDark ? '#161b22' : '#ebedf0';
-  const activeColor = isDark ? '#39d353' : '#26a641';
+  const emptyColor = isDark ? '#161b22' : '#c8d1da';
+  const activeColor = isDark ? '#39d353' : '#2da44e';
 
   const blocks = useMemo(() => {
     const sessionSet = new Set(gymSessions.map(s => s.date));
@@ -93,7 +93,7 @@ const GymCalendar = () => {
   const GAP = 3;
 
   return (
-    <div className="p-5 rounded-2xl bg-white dark:bg-gray-800/80 border border-gray-100 dark:border-gray-700/50">
+    <div className="p-5 rounded-2xl bg-gray-50 dark:bg-gray-800/80 border border-gray-200 dark:border-gray-700/50">
       <p className="text-sm font-medium text-gray-700 dark:text-gray-300 mb-4">Gym</p>
 
       <div className="overflow-x-auto" style={{ WebkitOverflowScrolling: 'touch' }}>
