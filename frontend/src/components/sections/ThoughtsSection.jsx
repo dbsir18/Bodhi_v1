@@ -126,7 +126,7 @@ const ThoughtsSection = ({ articleSlug, onArticleChange }) => {
               )}
               <div className="p-4">
                 <h4 className="font-semibold text-sm text-stone-800 dark:text-stone-200">{thought.title}</h4>
-                <p className="text-xs text-stone-500 dark:text-stone-400 mt-1">{thought.date} · {readingTime(thought.content)} min</p>
+                <p className="text-xs text-stone-500 dark:text-stone-400 mt-1">{thought.date}</p>
                 <p className="text-xs text-stone-400 dark:text-stone-500 mt-2 line-clamp-3 leading-relaxed">{thought.excerpt}</p>
               </div>
             </div>
@@ -173,7 +173,7 @@ const ThoughtsSection = ({ articleSlug, onArticleChange }) => {
                   )}
                   <div className="p-3">
                     <div className="flex items-center justify-between mb-1">
-                      <span className="text-xs text-stone-400">{thought.date} · {readingTime(thought.content)} min</span>
+                      <span className="text-xs text-stone-400">{thought.date}</span>
                     </div>
                     <h4 className={`font-medium text-sm line-clamp-2 ${isActive ? 'text-stone-900 dark:text-stone-100' : 'text-stone-700 dark:text-stone-300'}`}>{thought.title}</h4>
                     {!thought.coverImage && (

@@ -131,7 +131,7 @@ const LearningsSection = ({ articleSlug, onArticleChange }) => {
                   <Badge variant="secondary" className="text-[10px] px-1.5 py-0 bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300 border-0">
                     {learning.category}
                   </Badge>
-                  <span className="text-xs text-stone-400">{learning.date} · {readingTime(learning.content)} min</span>
+                  <span className="text-xs text-stone-400">{learning.date}</span>
                 </div>
                 <h4 className="font-semibold text-sm text-stone-800 dark:text-stone-200">{learning.title}</h4>
                 <p className="text-xs text-stone-400 dark:text-stone-500 mt-2 line-clamp-3 leading-relaxed">{learning.excerpt}</p>
@@ -173,7 +173,7 @@ const LearningsSection = ({ articleSlug, onArticleChange }) => {
                       <Badge variant="secondary" className="text-[10px] px-1.5 py-0 bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300 border-0">
                         {learning.category}
                       </Badge>
-                      <span className="text-xs text-stone-400">{learning.date} · {readingTime(learning.content)} min</span>
+                      <span className="text-xs text-stone-400">{learning.date}</span>
                     </div>
                     <h4 className={`font-medium text-sm line-clamp-2 ${isActive ? 'text-stone-900 dark:text-stone-100' : 'text-stone-700 dark:text-stone-300'}`}>{learning.title}</h4>
                     {!learning.coverImage && (
