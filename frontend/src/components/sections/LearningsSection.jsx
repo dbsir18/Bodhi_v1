@@ -9,6 +9,8 @@ import { slugify } from '../../App';
 
 const learnings = [...rawLearnings].reverse();
 
+const readingTime = (content) => Math.ceil((content?.trim().split(/\s+/).length || 0) / 200);
+
 const proseClasses = `prose dark:prose-invert max-w-none
   prose-p:text-[15px] prose-p:leading-[1.85] prose-p:text-stone-700 dark:prose-p:text-stone-300 prose-p:mb-6
   prose-headings:font-bold prose-headings:tracking-tight prose-headings:text-stone-900 dark:prose-headings:text-stone-100
@@ -68,7 +70,7 @@ const LearningsSection = ({ articleSlug, onArticleChange }) => {
       <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-black/75 via-black/40 to-transparent" />
       <div className="absolute bottom-5 left-8 right-8">
         <h2 className="text-2xl font-bold text-white tracking-tight" style={{ textShadow: '0 1px 8px rgba(0,0,0,0.6)' }}>{item.title}</h2>
-        <p className="text-white/70 text-sm mt-1.5 font-light">{item.date}</p>
+        <p className="text-white/70 text-sm mt-1.5 font-light">{item.date} · {readingTime(item.content)} min read</p>
       </div>
     </div>
   );
@@ -81,7 +83,7 @@ const LearningsSection = ({ articleSlug, onArticleChange }) => {
       {learning.coverImage ? renderCoverImage(learning) : (
         <div className="px-6 md:px-8 pt-6 md:pt-8 pb-2 shrink-0">
           <h2 className="text-2xl font-bold text-stone-900 dark:text-stone-100 tracking-tight">{learning.title}</h2>
-          <p className="text-stone-400 text-sm mt-1.5">{learning.date}</p>
+          <p className="text-stone-400 text-sm mt-1.5">{learning.date} · {readingTime(learning.content)} min read</p>
         </div>
       )}
       <div className={`px-6 md:px-8 py-6 ${proseClasses}`}>
@@ -129,7 +131,7 @@ const LearningsSection = ({ articleSlug, onArticleChange }) => {
                   <Badge variant="secondary" className="text-[10px] px-1.5 py-0 bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300 border-0">
                     {learning.category}
                   </Badge>
-                  <span className="text-xs text-stone-400">{learning.date}</span>
+                  <span className="text-xs text-stone-400">{learning.date} · {readingTime(learning.content)} min</span>
                 </div>
                 <h4 className="font-semibold text-sm text-stone-800 dark:text-stone-200">{learning.title}</h4>
                 <p className="text-xs text-stone-400 dark:text-stone-500 mt-2 line-clamp-3 leading-relaxed">{learning.excerpt}</p>
@@ -171,7 +173,7 @@ const LearningsSection = ({ articleSlug, onArticleChange }) => {
                       <Badge variant="secondary" className="text-[10px] px-1.5 py-0 bg-amber-100 dark:bg-amber-900/30 text-amber-800 dark:text-amber-300 border-0">
                         {learning.category}
                       </Badge>
-                      <span className="text-xs text-stone-400">{learning.date}</span>
+                      <span className="text-xs text-stone-400">{learning.date} · {readingTime(learning.content)} min</span>
                     </div>
                     <h4 className={`font-medium text-sm line-clamp-2 ${isActive ? 'text-stone-900 dark:text-stone-100' : 'text-stone-700 dark:text-stone-300'}`}>{learning.title}</h4>
                     {!learning.coverImage && (
