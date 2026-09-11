@@ -7,7 +7,13 @@ import { ScrollArea } from '../ui/scroll-area';
 import { Badge } from '../ui/badge';
 import { slugify } from '../../App';
 
-const learnings = [...rawLearnings].reverse();
+const dateValue = (dateStr) => {
+  const months = { Jan: 0, Feb: 1, Mar: 2, Apr: 3, May: 4, Jun: 5, Jul: 6, Aug: 7, Sep: 8, Oct: 9, Nov: 10, Dec: 11 };
+  const [month, year] = (dateStr || '').split(' ');
+  return (parseInt(year, 10) || 0) * 12 + (months[month] ?? 0);
+};
+
+const learnings = [...rawLearnings].sort((a, b) => dateValue(b.date) - dateValue(a.date));
 
 const readingTime = (content) => Math.ceil((content?.trim().split(/\s+/).length || 0) / 200);
 
@@ -66,24 +72,37 @@ const LearningsSection = ({ articleSlug, onArticleChange }) => {
         alt={item.title}
         className="w-full max-h-[40vh] object-contain"
       />
-      {/* Stronger gradient so white text always pops */}
-      <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-black/75 via-black/40 to-transparent" />
-      <div className="absolute bottom-5 left-8 right-8">
-        <h2 className="text-2xl font-bold text-white tracking-tight" style={{ textShadow: '0 1px 8px rgba(0,0,0,0.6)' }}>{item.title}</h2>
-        <p className="text-white/70 text-sm mt-1.5 font-light">{item.date} · {readingTime(item.content)} min read</p>
-      </div>
+      {/* Covers that carry their own text render clean; the title goes below the image instead */}
+      {item.coverTitleOverlay === false ? null : (
+        <>
+          <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-black/75 via-black/40 to-transparent" />
+          <div className="absolute bottom-5 left-8 right-8">
+            <h2 className="text-2xl font-bold text-white tracking-tight" style={{ textShadow: '0 1px 8px rgba(0,0,0,0.6)' }}>{item.title}</h2>
+            <p className="text-white/70 text-sm mt-1.5 font-light">{item.date} · {readingTime(item.content)} min read</p>
+          </div>
+        </>
+      )}
     </div>
   );
 
   const stripLeadingTitle = (content) =>
     content?.replace(/^#[^\n]*\n+/, '') ?? content;
 
+  const renderTitleHeader = (item) => (
+    <div className="px-6 md:px-8 pt-6 md:pt-8 pb-2 shrink-0">
+      <h2 className="text-2xl font-bold text-stone-900 dark:text-stone-100 tracking-tight">{item.title}</h2>
+      <p className="text-stone-400 text-sm mt-1.5">{item.date} · {readingTime(item.content)} min read</p>
+    </div>
+  );
+
   const renderArticle = (learning) => (
     <>
-      {learning.coverImage ? renderCoverImage(learning) : (
-        <div className="px-6 md:px-8 pt-6 md:pt-8 pb-2 shrink-0">
-          <h2 className="text-2xl font-bold text-stone-900 dark:text-stone-100 tracking-tight">{learning.title}</h2>
-          <p className="text-stone-400 text-sm mt-1.5">{learning.date} · {readingTime(learning.content)} min read</p>
+      {learning.coverImage && renderCoverImage(learning)}
+      {(!learning.coverImage || learning.coverTitleOverlay === false) && renderTitleHeader(learning)}
+      {learning.tldr && (
+        <div className="px-6 md:px-8 pt-2 shrink-0">
+          <p className="text-[15px] leading-relaxed text-stone-500 dark:text-stone-400">{learning.tldr}</p>
+          <div className="h-px mt-4 bg-gradient-to-r from-transparent via-stone-300 dark:via-stone-600 to-transparent" />
         </div>
       )}
       <div className={`px-6 md:px-8 py-6 ${proseClasses}`}>
@@ -176,8 +195,8 @@ const LearningsSection = ({ articleSlug, onArticleChange }) => {
                       <span className="text-xs text-stone-400">{learning.date}</span>
                     </div>
                     <h4 className={`font-medium text-sm line-clamp-2 ${isActive ? 'text-stone-900 dark:text-stone-100' : 'text-stone-700 dark:text-stone-300'}`}>{learning.title}</h4>
-                    {!learning.coverImage && (
-                      <p className="text-xs text-stone-400 dark:text-stone-500 mt-1 line-clamp-2 leading-relaxed">{learning.excerpt}</p>
+                    {learning.tldr && (
+                      <p className="text-xs text-stone-400 dark:text-stone-500 mt-1 line-clamp-2 leading-relaxed">{learning.tldr}</p>
                     )}
                   </div>
                 </div>
