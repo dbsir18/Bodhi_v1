@@ -500,7 +500,7 @@ Today I'd bet myself as an operator who can see across functions and build withi
     id: 3,
     title: "The Four Things That Actually Matter",
     date: "Sep 2026",
-    coverImage: "/images/covers/four-things.png",
+    coverImage: "/images/covers/four-things.jpg",
     coverTitleOverlay: false,
     category: "Life",
     excerpt: "Income, health, a close circle, a partner. Four clocks that don't compound the same way, and the skill is noticing which one is running low.",
