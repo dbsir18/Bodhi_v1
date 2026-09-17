@@ -206,7 +206,8 @@ The industry calls it a health trend. The pharmacologist calls it GABA modulatio
     id: 3,
     title: "India Doesn't Need Its Own Anduril",
     date: "Sep 2026",
-    coverImage: "/images/covers/anduril-palantir-india.png",
+    coverImage: "/images/covers/anduril-palantir-question.png",
+    coverTitleOverlay: false,
     excerpt: "India's defence-industrial base isn't short of hardware. It's short of the layer that makes it add up. Neither Anduril's vertical integration nor Palantir's rented ontology is the shape of the fix.",
     tldr: "India's defence industry has plenty of hardware but is missing the software layer that ties it together, and why copying Anduril or Palantir won't fix that.",
     content: `# India Doesn't Need Its Own Anduril
