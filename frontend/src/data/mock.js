@@ -977,6 +977,9 @@ export const gymSessions = [
   // November 2026
   { date: "2026-11-01" },
   { date: "2026-11-02" },
+  { date: "2026-11-11" },
+  { date: "2026-11-12" },
+  { date: "2026-11-14" },
 ];
 
 export const socialLinks = [
@@ -991,14 +994,14 @@ export const aboutInfo = {
   location: "DEL // BLR",
   education: "BITS Pilani · Econ & Engg",
   bio: "\"You can just do things.\"",
-  current: { role: "Technical GTM", company: "Sarvam", url: "https://www.sarvam.ai" },
+  current: { role: "Defence & National Security", company: "Sarvam", url: "https://www.sarvam.ai" },
   previous: [
     { company: "Composio", url: "https://composio.dev" },
     { company: "Mira", url: "https://mira.network" },
     { company: "Jungle Ventures", url: "https://www.jungle.vc" },
     { company: "Beenext", url: "https://beenext.com" },
   ],
-  fun: ["Gym", "Manchester United", "F1", "Travel"],
+  fun: ["Gym", "Manchester United", "Gaming", "Travel"],
 };
 
 // Changelog is now auto-generated at build time — see scripts/generate-changelog.js
