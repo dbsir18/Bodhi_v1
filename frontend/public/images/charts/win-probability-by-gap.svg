@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="640" viewBox="0 0 960 640" role="img">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="640" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0c0a09"/>
+      <stop offset="100%" stop-color="#1c1917"/>
+    </linearGradient>
+  </defs>
+  <style>
+    text { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+    .tick { fill: #78716c; font-size: 13px; }
+    .note { fill: #a8a29e; font-size: 13px; font-style: italic; }
+  </style>
+  <rect x="0" y="0" width="960" height="640" rx="16" fill="url(#bg)"/>
+  <text x="56" y="56" fill="#e7e5e4" font-size="24" font-weight="600">A real 2-point edge wins 63 games in 100 between two players,</text>
+  <text x="56" y="86" fill="#e7e5e4" font-size="24" font-weight="600">but only 33 at a table of four</text>
+  <text x="56" y="116" fill="#78716c" font-size="14.5">How often the best player wins, by skill gap, when the cards swing a score by about 6 points</text>
+
+  <line x1="130" y1="445" x2="820" y2="445" stroke="#44403c" stroke-width="1" stroke-dasharray="4 6"/>
+  <line x1="130" y1="350" x2="820" y2="350" stroke="#44403c" stroke-width="1" stroke-dasharray="4 6"/>
+  <line x1="130" y1="255" x2="820" y2="255" stroke="#44403c" stroke-width="1" stroke-dasharray="4 6"/>
+  <line x1="130" y1="540" x2="820" y2="540" stroke="#57534e" stroke-width="2"/>
+  <text x="118" y="544" text-anchor="end" class="tick">0%</text>
+  <text x="118" y="449" text-anchor="end" class="tick">25%</text>
+  <text x="118" y="354" text-anchor="end" class="tick">50%</text>
+  <text x="118" y="259" text-anchor="end" class="tick">75%</text>
+  <text x="118" y="164" text-anchor="end" class="tick">100%</text>
+  <text x="130" y="566" text-anchor="middle" class="tick">0</text>
+  <text x="187.5" y="566" text-anchor="middle" class="tick">1</text>
+  <text x="245" y="566" text-anchor="middle" class="tick">2</text>
+  <text x="302.5" y="566" text-anchor="middle" class="tick">3</text>
+  <text x="360" y="566" text-anchor="middle" class="tick">4</text>
+  <text x="417.5" y="566" text-anchor="middle" class="tick">5</text>
+  <text x="475" y="566" text-anchor="middle" class="tick">6</text>
+  <text x="590" y="566" text-anchor="middle" class="tick">8</text>
+  <text x="705" y="566" text-anchor="middle" class="tick">10</text>
+  <text x="820" y="566" text-anchor="middle" class="tick">12</text>
+  <text x="475" y="596" text-anchor="middle" fill="#78716c" font-size="14">Skill gap (points per game, best player minus worst)</text>
+
+  <line x1="475" y1="350" x2="820" y2="350" stroke="#57534e" stroke-width="1" stroke-dasharray="4 6"/>
+  <text x="816" y="342" text-anchor="end" class="note">coin flip</text>
+  <line x1="475" y1="445" x2="820" y2="445" stroke="#57534e" stroke-width="1" stroke-dasharray="4 6"/>
+  <text x="816" y="437" text-anchor="end" class="note">pure luck at a table of four</text>
+
+  <polyline points="130.0,350.0 187.5,324.9 245.0,300.2 302.5,277.4 360.0,255.8 417.5,236.8 475.0,220.4 590.0,194.6 705.0,178.2 820.0,168.7" fill="none" stroke="#f59e0b" stroke-width="3"/>
+  <polyline points="130.0,445.0 187.5,431.7 245.0,417.3 302.5,402.8 360.0,387.6 417.5,371.7 475.0,356.5 590.0,325.7 705.0,297.2 820.0,270.2" fill="none" stroke="#d6d3d1" stroke-width="3"/>
+  <circle cx="130.0" cy="350.0" r="5" fill="#f59e0b"/>
+  <circle cx="187.5" cy="324.9" r="5" fill="#f59e0b"/>
+  <circle cx="245.0" cy="300.2" r="9" fill="#f59e0b"/>
+  <circle cx="302.5" cy="277.4" r="5" fill="#f59e0b"/>
+  <circle cx="360.0" cy="255.8" r="5" fill="#f59e0b"/>
+  <circle cx="417.5" cy="236.8" r="5" fill="#f59e0b"/>
+  <circle cx="475.0" cy="220.4" r="5" fill="#f59e0b"/>
+  <circle cx="590.0" cy="194.6" r="5" fill="#f59e0b"/>
+  <circle cx="705.0" cy="178.2" r="5" fill="#f59e0b"/>
+  <circle cx="820.0" cy="168.7" r="5" fill="#f59e0b"/>
+  <circle cx="130.0" cy="445.0" r="5" fill="#d6d3d1"/>
+  <circle cx="187.5" cy="431.7" r="5" fill="#d6d3d1"/>
+  <circle cx="245.0" cy="417.3" r="9" fill="#d6d3d1"/>
+  <circle cx="302.5" cy="402.8" r="5" fill="#d6d3d1"/>
+  <circle cx="360.0" cy="387.6" r="5" fill="#d6d3d1"/>
+  <circle cx="417.5" cy="371.7" r="5" fill="#d6d3d1"/>
+  <circle cx="475.0" cy="356.5" r="5" fill="#d6d3d1"/>
+  <circle cx="590.0" cy="325.7" r="5" fill="#d6d3d1"/>
+  <circle cx="705.0" cy="297.2" r="5" fill="#d6d3d1"/>
+  <circle cx="820.0" cy="270.2" r="5" fill="#d6d3d1"/>
+
+  <circle cx="245" cy="300.22" r="8" fill="none" stroke="#f59e0b" stroke-width="1.5" opacity="0.6"/>
+  <text x="245" y="282.22" text-anchor="middle" fill="#f5f5f4" font-size="17" font-weight="600">63%</text>
+  <circle cx="245" cy="417.26" r="8" fill="none" stroke="#d6d3d1" stroke-width="1.5" opacity="0.6"/>
+  <text x="245" y="447.26" text-anchor="middle" fill="#f5f5f4" font-size="17" font-weight="600">33%</text>
+
+  <text x="830" y="172.74" fill="#f59e0b" font-size="15" font-weight="600">Two players</text>
+  <text x="830" y="274.2" fill="#d6d3d1" font-size="15" font-weight="600">Four players</text>
+</svg>

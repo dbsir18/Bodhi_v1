@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { Lightbulb, ArrowLeft } from 'lucide-react';
+import { Lightbulb, ArrowLeft, Pin } from 'lucide-react';
 import { learnings as rawLearnings } from '../../data/mock';
 import { ScrollArea } from '../ui/scroll-area';
 import { Badge } from '../ui/badge';
@@ -13,7 +13,10 @@ const dateValue = (dateStr) => {
   return (parseInt(year, 10) || 0) * 12 + (months[month] ?? 0);
 };
 
-const learnings = [...rawLearnings].sort((a, b) => dateValue(b.date) - dateValue(a.date));
+const learnings = [...rawLearnings].sort((a, b) => {
+  if (!!a.pinned !== !!b.pinned) return a.pinned ? -1 : 1;
+  return dateValue(b.date) - dateValue(a.date);
+});
 
 const readingTime = (content) => Math.ceil((content?.trim().split(/\s+/).length || 0) / 200);
 
@@ -30,6 +33,12 @@ const proseClasses = `prose dark:prose-invert max-w-none
   prose-table:text-sm prose-th:text-stone-700 dark:prose-th:text-stone-300
   prose-code:text-amber-700 dark:prose-code:text-amber-300 prose-code:bg-amber-50 dark:prose-code:bg-amber-950/30 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm
   prose-a:text-amber-700 dark:prose-a:text-amber-400 prose-a:underline-offset-2 prose-a:decoration-amber-300 dark:prose-a:decoration-amber-700`;
+
+const PinnedTag = () => (
+  <span className="inline-flex items-center gap-1 text-xs text-amber-600 dark:text-amber-400">
+    <Pin className="w-3 h-3" />Pinned
+  </span>
+);
 
 const LearningsSection = ({ articleSlug, onArticleChange }) => {
   const [selectedLearning, setSelectedLearning] = useState(null);
@@ -151,6 +160,7 @@ const LearningsSection = ({ articleSlug, onArticleChange }) => {
                     {learning.category}
                   </Badge>
                   <span className="text-xs text-stone-400">{learning.date}</span>
+                  {learning.pinned && <span className="ml-auto"><PinnedTag /></span>}
                 </div>
                 <h4 className="font-semibold text-sm text-stone-800 dark:text-stone-200">{learning.title}</h4>
                 <p className="text-xs text-stone-400 dark:text-stone-500 mt-2 line-clamp-3 leading-relaxed">{learning.excerpt}</p>
@@ -193,6 +203,7 @@ const LearningsSection = ({ articleSlug, onArticleChange }) => {
                         {learning.category}
                       </Badge>
                       <span className="text-xs text-stone-400">{learning.date}</span>
+                      {learning.pinned && <span className="ml-auto"><PinnedTag /></span>}
                     </div>
                     <h4 className={`font-medium text-sm line-clamp-2 ${isActive ? 'text-stone-900 dark:text-stone-100' : 'text-stone-700 dark:text-stone-300'}`}>{learning.title}</h4>
                     {learning.tldr && (

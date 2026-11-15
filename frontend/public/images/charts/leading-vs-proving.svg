@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="640" viewBox="0 0 960 640" role="img">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="640" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0c0a09"/>
+      <stop offset="100%" stop-color="#1c1917"/>
+    </linearGradient>
+  </defs>
+  <style>
+    text { font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; }
+    .tick { fill: #78716c; font-size: 13px; }
+    .note { fill: #a8a29e; font-size: 13px; font-style: italic; }
+  </style>
+  <rect x="0" y="0" width="960" height="640" rx="16" fill="url(#bg)"/>
+  <text x="56" y="58" fill="#e7e5e4" font-size="24" font-weight="600">Leading the tally comes fast. Proving it takes about 70 games.</text>
+  <text x="56" y="88" fill="#78716c" font-size="14.5">A strategy worth 2 points a game, when the cards swing a score by about 6</text>
+
+  <line x1="130" y1="464" x2="800" y2="464" stroke="#44403c" stroke-width="1" stroke-dasharray="4 6"/>
+  <line x1="130" y1="388" x2="800" y2="388" stroke="#44403c" stroke-width="1" stroke-dasharray="4 6"/>
+  <line x1="130" y1="312" x2="800" y2="312" stroke="#44403c" stroke-width="1" stroke-dasharray="4 6"/>
+  <line x1="130" y1="236" x2="800" y2="236" stroke="#44403c" stroke-width="1" stroke-dasharray="4 6"/>
+  <line x1="130" y1="540" x2="800" y2="540" stroke="#57534e" stroke-width="2"/>
+  <text x="118" y="544" text-anchor="end" class="tick">0%</text>
+  <text x="118" y="468" text-anchor="end" class="tick">20%</text>
+  <text x="118" y="392" text-anchor="end" class="tick">40%</text>
+  <text x="118" y="316" text-anchor="end" class="tick">60%</text>
+  <text x="118" y="240" text-anchor="end" class="tick">80%</text>
+  <text x="118" y="164" text-anchor="end" class="tick">100%</text>
+  <text x="130" y="566" text-anchor="middle" class="tick">0</text>
+  <text x="264" y="566" text-anchor="middle" class="tick">20</text>
+  <text x="398" y="566" text-anchor="middle" class="tick">40</text>
+  <text x="532" y="566" text-anchor="middle" class="tick">60</text>
+  <text x="666" y="566" text-anchor="middle" class="tick">80</text>
+  <text x="800" y="566" text-anchor="middle" class="tick">100</text>
+  <text x="465" y="596" text-anchor="middle" fill="#78716c" font-size="14">Games played (same players, same seats)</text>
+
+  <line x1="130" y1="236" x2="800" y2="236" stroke="#57534e" stroke-width="1" stroke-dasharray="4 6"/>
+  <line x1="605.7" y1="236" x2="605.7" y2="540" stroke="#57534e" stroke-width="1" stroke-dasharray="4 6"/>
+  <text x="615.7" y="524" class="note">about 71 games: 80% sure of proving it</text>
+
+  <polyline points="130.0,350.0 163.5,246.6 197.0,215.5 230.5,197.2 264.0,185.8 297.5,178.2 331.0,172.9 398.0,166.8 465.0,163.4 532.0,161.9 599.0,161.1 666.0,160.4 733.0,160.4 800.0,160.0" fill="none" stroke="#d6d3d1" stroke-width="3"/>
+  <polyline points="130.0,530.5 163.5,497.4 197.0,470.8 230.5,444.2 264.0,418.8 297.5,393.7 331.0,370.1 398.0,327.6 465.0,291.5 532.0,261.5 599.0,237.5 666.0,218.5 733.0,203.7 800.0,192.3" fill="none" stroke="#f59e0b" stroke-width="3"/>
+  <circle cx="130.0" cy="350.0" r="5" fill="#d6d3d1"/>
+  <circle cx="163.5" cy="246.6" r="5" fill="#d6d3d1"/>
+  <circle cx="197.0" cy="215.5" r="5" fill="#d6d3d1"/>
+  <circle cx="230.5" cy="197.2" r="5" fill="#d6d3d1"/>
+  <circle cx="264.0" cy="185.8" r="5" fill="#d6d3d1"/>
+  <circle cx="297.5" cy="178.2" r="5" fill="#d6d3d1"/>
+  <circle cx="331.0" cy="172.9" r="5" fill="#d6d3d1"/>
+  <circle cx="398.0" cy="166.8" r="5" fill="#d6d3d1"/>
+  <circle cx="465.0" cy="163.4" r="5" fill="#d6d3d1"/>
+  <circle cx="532.0" cy="161.9" r="5" fill="#d6d3d1"/>
+  <circle cx="599.0" cy="161.1" r="5" fill="#d6d3d1"/>
+  <circle cx="666.0" cy="160.4" r="5" fill="#d6d3d1"/>
+  <circle cx="733.0" cy="160.4" r="5" fill="#d6d3d1"/>
+  <circle cx="800.0" cy="160.0" r="5" fill="#d6d3d1"/>
+  <circle cx="130.0" cy="530.5" r="5" fill="#f59e0b"/>
+  <circle cx="163.5" cy="497.4" r="5" fill="#f59e0b"/>
+  <circle cx="197.0" cy="470.8" r="5" fill="#f59e0b"/>
+  <circle cx="230.5" cy="444.2" r="5" fill="#f59e0b"/>
+  <circle cx="264.0" cy="418.8" r="5" fill="#f59e0b"/>
+  <circle cx="297.5" cy="393.7" r="5" fill="#f59e0b"/>
+  <circle cx="331.0" cy="370.1" r="5" fill="#f59e0b"/>
+  <circle cx="398.0" cy="327.6" r="5" fill="#f59e0b"/>
+  <circle cx="465.0" cy="291.5" r="5" fill="#f59e0b"/>
+  <circle cx="532.0" cy="261.5" r="5" fill="#f59e0b"/>
+  <circle cx="599.0" cy="237.5" r="5" fill="#f59e0b"/>
+  <circle cx="666.0" cy="218.5" r="5" fill="#f59e0b"/>
+  <circle cx="733.0" cy="203.7" r="5" fill="#f59e0b"/>
+  <circle cx="800.0" cy="192.3" r="5" fill="#f59e0b"/>
+
+  <text x="250" y="175.83999999999997" text-anchor="end" fill="#f5f5f4" font-size="16" font-weight="600">93%</text>
+  <text x="280" y="440.78" fill="#f5f5f4" font-size="16" font-weight="600">32%</text>
+
+  <text x="810" y="158" fill="#d6d3d1" font-size="15" font-weight="600">Better strategy</text>
+  <text x="810" y="178" fill="#d6d3d1" font-size="15" font-weight="600">leads the tally</text>
+  <text x="810" y="196.3" fill="#f59e0b" font-size="15" font-weight="600">You can prove it</text>
+  <text x="810" y="214.3" fill="#f59e0b" font-size="15" font-weight="600">(95% sure)</text>
+</svg>

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
-import { Search, BookOpen, ArrowLeft } from 'lucide-react';
+import { Search, BookOpen, ArrowLeft, Pin } from 'lucide-react';
 import { thoughts as rawThoughts } from '../../data/mock';
 import { ScrollArea } from '../ui/scroll-area';
 import { slugify } from '../../App';
@@ -12,7 +12,10 @@ const dateValue = (dateStr) => {
   return (parseInt(year, 10) || 0) * 12 + (months[month] ?? 0);
 };
 
-const thoughts = [...rawThoughts].sort((a, b) => dateValue(b.date) - dateValue(a.date));
+const thoughts = [...rawThoughts].sort((a, b) => {
+  if (!!a.pinned !== !!b.pinned) return a.pinned ? -1 : 1;
+  return dateValue(b.date) - dateValue(a.date);
+});
 
 const readingTime = (content) => Math.ceil((content?.trim().split(/\s+/).length || 0) / 200);
 
@@ -29,6 +32,12 @@ const proseClasses = `prose dark:prose-invert max-w-none
   prose-table:text-sm prose-th:text-stone-700 dark:prose-th:text-stone-300
   prose-code:text-amber-700 dark:prose-code:text-amber-300 prose-code:bg-amber-50 dark:prose-code:bg-amber-950/30 prose-code:px-1.5 prose-code:py-0.5 prose-code:rounded prose-code:text-sm
   prose-a:text-amber-700 dark:prose-a:text-amber-400 prose-a:underline-offset-2 prose-a:decoration-amber-300 dark:prose-a:decoration-amber-700`;
+
+const PinnedTag = () => (
+  <span className="inline-flex items-center gap-1 text-xs text-amber-600 dark:text-amber-400">
+    <Pin className="w-3 h-3" />Pinned
+  </span>
+);
 
 const ThoughtsSection = ({ articleSlug, onArticleChange }) => {
   const [selectedThought, setSelectedThought] = useState(null);
@@ -146,7 +155,10 @@ const ThoughtsSection = ({ articleSlug, onArticleChange }) => {
               )}
               <div className="p-4">
                 <h4 className="font-semibold text-sm text-stone-800 dark:text-stone-200">{thought.title}</h4>
-                <p className="text-xs text-stone-500 dark:text-stone-400 mt-1">{thought.date}</p>
+                <div className="flex items-center gap-2 mt-1">
+                  <span className="text-xs text-stone-500 dark:text-stone-400">{thought.date}</span>
+                  {thought.pinned && <PinnedTag />}
+                </div>
                 <p className="text-xs text-stone-400 dark:text-stone-500 mt-2 line-clamp-3 leading-relaxed">{thought.excerpt}</p>
               </div>
             </div>
@@ -194,6 +206,7 @@ const ThoughtsSection = ({ articleSlug, onArticleChange }) => {
                   <div className="p-3">
                     <div className="flex items-center justify-between mb-1">
                       <span className="text-xs text-stone-400">{thought.date}</span>
+                      {thought.pinned && <PinnedTag />}
                     </div>
                     <h4 className={`font-medium text-sm line-clamp-2 ${isActive ? 'text-stone-900 dark:text-stone-100' : 'text-stone-700 dark:text-stone-300'}`}>{thought.title}</h4>
                     {thought.tldr && (
