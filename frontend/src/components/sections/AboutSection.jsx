@@ -1,11 +1,11 @@
 import React from 'react';
-import { Dumbbell, Trophy, Flag, Plane } from 'lucide-react';
+import { Dumbbell, Trophy, Plane, Gamepad2 } from 'lucide-react';
 import { aboutInfo } from '../../data/mock';
 
 const funIcons = {
   Gym: Dumbbell,
   'Manchester United': Trophy,
-  F1: Flag,
+  Gaming: Gamepad2,
   Travel: Plane,
 };
 
